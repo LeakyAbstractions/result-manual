@@ -1,5 +1,4 @@
 ---
-description: This is the page description
 coverY: 0
 ---
 
