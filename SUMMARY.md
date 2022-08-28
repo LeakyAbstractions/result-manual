@@ -12,4 +12,5 @@
 
 * [Requesting Time Off](the-formal-stuff/requesting-time-off.md)
 * [Filing Expenses](the-formal-stuff/filing-expenses.md)
-* [Jackson Module](advanced-usage/result-jackson-module.md)
+* [Jackson Module](the-formal-stuff/result-jackson-module/README.md)
+  * [Copy of Jackson Module](the-formal-stuff/result-jackson-module/result-jackson-module.md)
