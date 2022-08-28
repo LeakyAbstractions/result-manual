@@ -7,9 +7,9 @@ coverY: 0
 
 # Meet the Team!
 
-{% hint style="info" %}
-**Good to know:** an employee directory can be a great way to help new folks get familiar with everyone they're going to be working with.
-{% endhint %}
+> **[info] Good to know:**
+>
+> An employee directory can be a great way to help new folks get familiar with everyone they're going to be working with.
 
 ## Esme DeWalt
 
@@ -19,9 +19,9 @@ coverY: 0
 
 ### Bio
 
-{% hint style="info" %}
-**Good to know:** Encourage employees to write a succinct bio that can help new hires learn about them and how they like to work.
-{% endhint %}
+> `<% hint style="info" %>`
+> **Good to know:** Encourage employees to write a succinct bio that can help new hires learn about them and how they like to work.
+> `<% endhint %>`
 
 ## Rima Paterson
 
@@ -31,9 +31,9 @@ coverY: 0
 
 ### Bio
 
-{% hint style="info" %}
-**Good to know:** Encourage employees to write a succinct bio that can help new hires learn about them and how they like to work.
-{% endhint %}
+> `<% hint style="info" %>`
+> **Good to know:** Encourage employees to write a succinct bio that can help new hires learn about them and how they like to work.
+> `<% endhint %>`
 
 ## Stefan Barr
 
@@ -43,6 +43,6 @@ coverY: 0
 
 ### Bio
 
-{% hint style="info" %}
-**Good to know:** Encourage employees to write a succinct bio that can help new hires learn about them and how they like to work.
-{% endhint %}
+> `<% hint style="info" %>`
+> **Good to know:** Encourage employees to write a succinct bio that can help new hires learn about them and how they like to work.
+> `<% endhint %>`
