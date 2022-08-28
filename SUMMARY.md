@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Welcome!](README.md)
+* [Home](README.md)
+* [Welcome!](<README (1).md>)
 
 ## The Company
 
