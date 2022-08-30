@@ -12,7 +12,7 @@ may need to simply get that value out of the container.
 As useful as it may seem at first, we will soon realize that we won't need to do it that often.
 
 
-## Retrieving Success Value
+## Unwrapping Success Value
 
 The most basic way to retrieve the success value wrapped inside a `Result` instance is [`getSuccess()`][GET_SUCCESS].
 This method will return an optional success value, depending on whether the result is successful or failed.
@@ -32,7 +32,7 @@ void get_success() {
 ```
 
 
-## Retrieving Failure Value
+## Unwrapping Failure Value
 
 Similarly, we can use [`getFailure()`][GET_FAILURE] to obtain the failure value held by a `Result` object.
 
@@ -55,7 +55,7 @@ void get_failure() {
 > object.
 
 
-## Default Success Value
+## Using Alternative Success Value
 
 For example, we can use [`orElse()`][OR_ELSE] and provide an alternative success value that will be returned in case the
 result is failed.
@@ -77,7 +77,7 @@ void get_success_or_an_alternative_value() {
 ```
 
 
-## Alternative Success Value
+## Mapping Failure Value
 
 The [`orElseMap()`][OR_ELSE_MAP] method is similar to `orElse()`. However, instead of using an alternative success
 value, it takes a mapping function. This function will be applied to the failure value to produce an alternative success
@@ -103,7 +103,7 @@ void get_success_or_map_failure_value() {
 ```
 
 
-## Stream Success Value
+## Streaming Success Value
 
 Finally, we can use [`stream()`][STREAM] to wrap the success value held by an instance of `Result` into a `Stream`
 object. If the result has no success value, this method will return an empty stream.
@@ -119,7 +119,7 @@ void get_success_stream() {
   final Stream<?> stream2 = result2.stream();
   // Then
   assertEquals("Yes", stream1.findFirst().orElse(null));
-  assertNull(stream2.findFirst().orElse(null));
+  assertTrue(stream2.findFirst()::isEmpty);
 }
 ```
 

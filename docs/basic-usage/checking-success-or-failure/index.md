@@ -6,25 +6,45 @@ description: How to find out if a Result is successful or failed
 
 # Checking Success or Failure
 
-As we saw previously, we can determine if a `Result` instance is successful or failed via [`hasSuccess()`][HAS_SUCCESS]
-and [`hasFailure()`][HAS_FAILURE].
+As we saw previously, we can easily determine if a `Result` instance is successful or failed.
 
+
+## Checking Success
+
+We can use [`hasSuccess()`][HAS_SUCCESS] to find out if a result contains a success value.
 
 ```java
 @Test
-void check_success_or_failure() {
+void check_success() {
   // Given
   final Result<?, ?> result1 = success(1024);
   final Result<?, ?> result2 = failure(1024);
   // When
   final boolean result1HasSuccess = result1.hasSuccess();
-  final boolean result1HasFailure = result1.hasFailure();
   final boolean result2HasSuccess = result2.hasSuccess();
-  final boolean result2HasFailure = result2.hasFailure();
   // Then
   assertTrue(result1HasSuccess);
-  assertFalse(result1HasFailure);
   assertFalse(result2HasSuccess);
+}
+```
+
+
+## Checking Failure
+
+And [`hasFailure()`][HAS_FAILURE] will let us know if a result contains a failure value.
+
+
+```java
+@Test
+void check_failure() {
+  // Given
+  final Result<?, ?> result1 = success(512);
+  final Result<?, ?> result2 = failure(512);
+  // When
+  final boolean result1HasFailure = result1.hasFailure();
+  final boolean result2HasFailure = result2.hasFailure();
+  // Then
+  assertFalse(result1HasFailure);
   assertTrue(result2HasFailure);
 }
 ```
