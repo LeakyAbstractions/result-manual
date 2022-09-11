@@ -1,20 +1,34 @@
 # Table of contents
 
-* [Home](README.md)
-* [Welcome!](<README (1).md>)
+* [Result Library for Java](README.md)
 
-## The Company
+## Getting Started
 
-* [Vision and Values](the-company/vision-and-values.md)
-* [Meet the Team!](the-company/meet-the-team.md)
+* [Adding Result to Your Build](getting-started/adding-result-to-your-build.md)
+* [Instantiating Result](getting-started/creating-result-objects.md)
 
-## The Formal Stuff
+## Basic Usage
 
-* [Requesting Time Off](the-formal-stuff/requesting-time-off.md)
-* [Filing Expenses](the-formal-stuff/filing-expenses.md)
-* [Jackson Module](the-formal-stuff/result-jackson-module/README.md)
-  * [Problem Overview](the-formal-stuff/result-jackson-module/result-jackson-module/README.md)
-    * [Serialization Problem](the-formal-stuff/result-jackson-module/result-jackson-module/result-jackson-module.md)
-    * [Deserialization Problem](the-formal-stuff/result-jackson-module/result-jackson-module/result-jackson-module-1.md)
-  * [Solution](the-formal-stuff/result-jackson-module/result-jackson-module-1.md)
-  * [Conclusion](the-formal-stuff/result-jackson-module/result-jackson-module-2.md)
+* [Conditional Actions](basic-usage/conditional-actions.md)
+* [Unwrapping Values](basic-usage/unwrapping-values.md)
+
+## Advanced Usage
+
+* [Filtering Values](advanced-usage/filtering-success-values.md)
+* [Transforming Values](advanced-usage/transforming-values.md)
+* [Lazy Results](advanced-usage/lazy-results.md)
+
+## Testing Result Objects
+
+* [Fluent Assertions](testing-result-objects/fluent-assertions.md)
+
+***
+
+* [Releases](releases.md)
+* [Where to Get Help](support.md)
+* [How to Contribute](contributing.md)
+* [Code of Conduct](code\_of\_conduct.md)
+* [Author](author.md)
+* [License](license.md)
+* [Result Library for Java](result-library-for-java.md)
+* [Example](example.md)
