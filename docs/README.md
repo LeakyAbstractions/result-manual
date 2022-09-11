@@ -1,8 +1,9 @@
 ---
 description: A Java library to handle success and failure without exceptions
+layout: landing
 ---
 
-# Result Library for Java
+# Result Library
 
 ![Result](https://dev.leakyabstractions.com/result/result-banner-centered.png)
 
