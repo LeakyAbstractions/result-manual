@@ -6,13 +6,15 @@ description: My description
 
 Example
 
+<figure><img src=".gitbook/assets/cover_small.jpg" alt=""><figcaption></figcaption></figure>
+
 image 1 start
 
-![](<.gitbook/assets/result-banner-centered.png>)
+![](broken-reference)
 
 image 1 end
 
-> ### page title:
+> #### page title:
 >
 > page description:
 
@@ -73,27 +75,27 @@ foobar
 Method description
 {% endswagger-description %}
 
-{% swagger-parameter name="param2" type="object" in="path" %}
+{% swagger-parameter name="param2" type="object" in="path" required="false" %}
 description
 {% endswagger-parameter %}
 
-{% swagger-parameter name="param1" type="string" in="path" %}
+{% swagger-parameter name="param1" type="string" in="path" required="false" %}
 description
 {% endswagger-parameter %}
 
-{% swagger-parameter name="header1" type="string" in="header" %}
+{% swagger-parameter name="header1" type="string" in="header" required="false" %}
 description
 {% endswagger-parameter %}
 
-{% swagger-parameter name="param1" type="array" in="query" %}
+{% swagger-parameter name="param1" type="array" in="query" required="false" %}
 description
 {% endswagger-parameter %}
 
-{% swagger-parameter name="param1" type="number" in="body" %}
+{% swagger-parameter name="param1" type="number" in="body" required="false" %}
 description
 {% endswagger-parameter %}
 
-{% swagger-parameter name="param1" type="boolean" in="body" %}
+{% swagger-parameter name="param1" type="boolean" in="body" required="false" %}
 description
 {% endswagger-parameter %}
 
