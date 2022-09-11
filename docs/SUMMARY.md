@@ -30,5 +30,4 @@
 * [Code of Conduct](code\_of\_conduct.md)
 * [Author](author.md)
 * [License](license.md)
-* [Result Library for Java](result-library-for-java.md)
 * [Example](example.md)
