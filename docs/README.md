@@ -1,9 +1,9 @@
 ---
-title: Result Library for Java
+title: Page title
 description: A Java library to handle success and failure without exceptions
 ---
 
-# Home
+# Result Library
 
 ![Result](https://dev.leakyabstractions.com/result/result-banner-centered.png)
 
