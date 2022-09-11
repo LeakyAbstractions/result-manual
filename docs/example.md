@@ -8,7 +8,7 @@ Example
 
 image 1 start
 
-![](<.gitbook/assets/result-banner-centered (1).png>)
+![](<.gitbook/assets/result-banner-centered (2).png>)
 
 image 1 end
 

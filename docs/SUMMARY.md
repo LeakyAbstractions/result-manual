@@ -14,7 +14,7 @@
 
 ## Advanced Usage
 
-* [Filtering Values](advanced-usage/filtering-success-values.md)
+* [Screening Values](advanced-usage/filtering-success-values.md)
 * [Transforming Values](advanced-usage/transforming-values.md)
 * [Lazy Results](advanced-usage/lazy-results.md)
 
