@@ -1,4 +1,5 @@
 ---
+title: Result Library for Java
 description: A Java library to handle success and failure without exceptions
 layout: landing
 ---
