@@ -3,9 +3,9 @@ title: Page title
 description: A Java library to handle success and failure without exceptions
 ---
 
-# Result Library
+# Result Library for Java
 
-![Result](https://dev.leakyabstractions.com/result/result-banner-centered.png)
+<figure><img src="https://raw.githubusercontent.com/LeakyAbstractions/result/main/docs/result-magic-ball.png" alt=""><figcaption></figcaption></figure>
 
 The purpose of this library is to provide a type-safe encapsulation of operation results that may have succeeded or failed, instead of throwing exceptions.
 
@@ -35,6 +35,7 @@ The best way to think of `Result` is as a super-powered version of `Optional`. T
 |                   | `ifFailure`       |
 | `ifPresentOrElse` | `ifSuccessOrElse` |
 | `filter`          | `filter`          |
+|                   | `recover`         |
 | `map`             | `mapSuccess`      |
 |                   | `mapFailure`      |
 |                   | `map`             |
