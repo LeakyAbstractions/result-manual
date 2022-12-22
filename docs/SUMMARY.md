@@ -1,33 +1,25 @@
 # Table of contents
 
-* [Result](README.md)
+* [Result Library for Java](README.md)
 
-## Getting Started
+## [🌱 Getting Started](getting-started/index.md)
 
-* [Adding Result to Your Build](getting-started/adding-result-to-your-build.md)
-* [Instantiating Result](getting-started/creating-result-objects.md)
+* [🌱 GETTING STARTED](getting-started/index.md)
+ * [Adding Result to Your Build](getting-started/adding-result-to-your-build/index.md)
+ * [Creating Result Objects](getting-started/creating-result-objects/index.md)
 
-## Basic Usage
+## [🪴 Basic Usage](basic-usage/index.md)
 
-* [Conditional Actions](basic-usage/conditional-actions.md)
-* [Unwrapping Values](basic-usage/unwrapping-values.md)
+* [🪴 BASIC USAGE](basic-usage/index.md)
+ * [Checking Success or Failure](basic-usage/checking-success-or-failure/index.md)
+ * [Unwrapping Values](basic-usage/unwrapping-values/index.md)
+ * [Conditional Actions](basic-usage/conditional-actions/index.md)
 
-## Advanced Usage
+## [🚀 Advanced Usage](advanced-usage/index.md)
 
-* [Screening Values](advanced-usage/filtering-success-values.md)
-* [Transforming Values](advanced-usage/transforming-values.md)
-* [Lazy Results](advanced-usage/lazy-results.md)
-
-## Testing Result Objects
-
-* [Fluent Assertions](testing-result-objects/fluent-assertions.md)
-
-***
-
-* [Releases](releases.md)
-* [Where to Get Help](support.md)
-* [How to Contribute](contributing.md)
-* [Code of Conduct](code\_of\_conduct.md)
-* [Author](author.md)
-* [License](license.md)
-* [Example](example.md)
+* [🚀 ADVANCED USAGE](advanced-usage/index.md)
+ * [Screening Values](advanced-usage/screening-values/index.md)
+ * [Transforming Values](advanced-usage/transforming-values/index.md)
+ * [Lazy Results](advanced-usage/lazy-results/index.md)
+ * [Jackson Module](advanced-usage/result-jackson-module/index.md)
+ * [Fluent Assertions](advanced-usage/fluent-assertions/index.md)

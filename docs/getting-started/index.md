@@ -14,3 +14,5 @@ If you like `Optional` but feel that it sometimes falls too short, you'll love `
 The best way to think of `Result` is as a super-powered version of `Optional`. The only difference is that whereas
 `Optional` may contain a successful value or express the absence of a value, `Result` contains either a successful value
 or a failure value that explains what went wrong.
+
+![](/assets/images/getting-started.png)

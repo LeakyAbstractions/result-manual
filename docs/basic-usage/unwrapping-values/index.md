@@ -103,23 +103,36 @@ void get_success_or_map_failure_value() {
 ```
 
 
-## Streaming Success Value
+## Streaming Success/Failure Value
 
-Finally, we can use [`stream()`][STREAM] to wrap the success value held by an instance of `Result` into a `Stream`
-object. If the result has no success value, this method will return an empty stream.
+Finally, we can use [`streamSuccess()`][STREAM_SUCCESS] and [`streamFailure()`][STREAM_FAILURE] to wrap the value held
+by an instance of `Result` into a possibly-empty `Stream` object.
 
 ```java
 @Test
-void get_success_stream() {
+void stream_success() {
   // Given
   final Result<?, ?> result1 = success("Yes");
   final Result<?, ?> result2 = failure("No");
   // When
-  final Stream<?> stream1 = result1.stream();
-  final Stream<?> stream2 = result2.stream();
+  final Stream<?> stream1 = result1.streamSuccess();
+  final Stream<?> stream2 = result2.streamSuccess();
   // Then
   assertEquals("Yes", stream1.findFirst().orElse(null));
-  assertTrue(stream2.findFirst()::isEmpty);
+  assertNull(stream2.findFirst().orElse(null));
+}
+
+@Test
+void stream_failure() {
+  // Given
+  final Result<?, ?> result1 = success("Yes");
+  final Result<?, ?> result2 = failure("No");
+  // When
+  final Stream<?> stream1 = result1.streamFailure();
+  final Stream<?> stream2 = result2.streamFailure();
+  // Then
+  assertNull(stream1.findFirst().orElse(null));
+  assertEquals("No", stream2.findFirst().orElse(null));
 }
 ```
 
@@ -129,5 +142,6 @@ void get_success_stream() {
 [OPTIONAL_OR_ELSE]: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Optional.html#orElse(T)
 [OR_ELSE]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElse-S-
 [OR_ELSE_MAP]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElseMap-java.util.function.Function-
-[STREAM]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#stream--
+[STREAM_SUCCESS]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#streamSuccess--
+[STREAM_FAILURE]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#streamFailure--
 [OPTIONAL_GET]: https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html#get--

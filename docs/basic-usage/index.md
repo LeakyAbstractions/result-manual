@@ -11,3 +11,5 @@ the other hand, if it’s a failed result we may have some recovery strategy or 
 
 Other simple use-case scenarios include checking if the `Result` object is successful or failed, or unwrapping the
 success/failure values.
+
+![](/assets/images/basic-usage.png)

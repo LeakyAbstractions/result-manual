@@ -10,4 +10,7 @@ idiomatic is to manipulate the value inside a result without actually unwrapping
 transformations to a `Result` instance, obtaining a possibly different result object in return. This allows us to
 compose behavior in a [monadic way][MONAD].
 
+![](/assets/images/advanced-usage.png)
+
+
 [MONAD]: https://en.wikipedia.org/wiki/Monad_(functional_programming)

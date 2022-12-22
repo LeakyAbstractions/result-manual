@@ -3,7 +3,7 @@ title: Filtering Values
 description: Rejecting success values based on a predefined rule
 ---
 
-# Filtering Values
+# Screening Values
 
 We can run an inline test on our wrapped success value with the [`filter()`][FILTER] method. It takes a predicate and a
 mapping function as arguments and returns a `Result` object:
