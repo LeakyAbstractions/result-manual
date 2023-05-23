@@ -18,7 +18,7 @@
 ## 🚀 Advanced Usage
 
 * [Advanced Usage](advanced-usage/index.md)
-* [Screening Values](advanced-usage/screening-values/index.md)
+* [Screening Results](advanced-usage/screening-values/index.md)
 * [Transforming Values](advanced-usage/transforming-values/index.md)
 * [Lazy Results](advanced-usage/lazy-results/index.md)
 * [Jackson Module](advanced-usage/result-jackson-module/index.md)
