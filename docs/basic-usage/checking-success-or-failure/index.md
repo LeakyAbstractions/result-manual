@@ -1,17 +1,16 @@
 ---
 title: Checking Success or Failure
 description: How to find out if a Result is successful or failed
+coverY: 0
 ---
-
 
 # Checking Success or Failure
 
 As we saw previously, we can easily determine if a `Result` instance is successful or failed.
 
-
 ## Checking Success
 
-We can use [`hasSuccess()`][HAS_SUCCESS] to find out if a result contains a success value.
+We can use [`hasSuccess()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasSuccess--) to find out if a result contains a success value.
 
 ```java
 @Test
@@ -28,11 +27,9 @@ void check_success() {
 }
 ```
 
-
 ## Checking Failure
 
-And [`hasFailure()`][HAS_FAILURE] will let us know if a result contains a failure value.
-
+And [`hasFailure()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasFailure--) will let us know if a result contains a failure value.
 
 ```java
 @Test
@@ -48,7 +45,3 @@ void check_failure() {
   assertTrue(result2HasFailure);
 }
 ```
-
-
-[HAS_SUCCESS]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasSuccess--
-[HAS_FAILURE]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasFailure--
