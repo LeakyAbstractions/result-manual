@@ -9,6 +9,6 @@ Very often, when we have a `Result` instance we want to execute a specific actio
 
 Other simple scenarios include checking if the `Result` object is successful or failed, or unwrapping the success/failure values.
 
-<figure><img src="../.gitbook/assets/basic-usage.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/basic-usage.png" alt=""><figcaption><p>You don't need <code>if</code> or early <code>return</code> statements when you can handle success and failure without any hassle.</p></figcaption></figure>
 
 ![](../../assets/images/basic-usage.png)
