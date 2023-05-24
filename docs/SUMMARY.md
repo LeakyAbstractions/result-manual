@@ -23,3 +23,4 @@
 * [Lazy Results](advanced-usage/lazy-results/index.md)
 * [Jackson Module](advanced-usage/result-jackson-module/index.md)
 * [Fluent Assertions](advanced-usage/fluent-assertions/index.md)
+* [Bill of Materials](advanced-usage/bill-of-materials.md)

@@ -3,12 +3,13 @@ title: Transforming Values
 description: Transform wrapped value to some other value
 ---
 
-## Transforming Values
+# Transforming Values
+
+### Transforming Values
 
 In the previous section, we looked at how to reject or accept a success value based on a filter.
 
-
-## Mapping Success Values
+### Mapping Success Values
 
 We can also transform success/failure values held by `Result` objects with the `map...` family of methods:
 
@@ -24,15 +25,11 @@ void should_return_string_length() {
 }
 ```
 
-In this example, we wrap a `String` inside a `Result` object and use its [`mapSuccess()`][MAP_SUCCESS] method to
-manipulate it (here we calculate its length). Note that we can specify the action as a method reference, or a lambda. In
-any case, the result of this action gets wrapped inside a new `Result` object. And then we call the appropriate method
-on the returned result to retrieve its value.
+In this example, we wrap a `String` inside a `Result` object and use its [`mapSuccess()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#mapSuccess-java.util.function.Function-) method to manipulate it (here we calculate its length). Note that we can specify the action as a method reference, or a lambda. In any case, the result of this action gets wrapped inside a new `Result` object. And then we call the appropriate method on the returned result to retrieve its value.
 
+### Mapping Success/Failure Values
 
-## Mapping Success/Failure Values
-
-There is another [`map()`][MAP] method to transform either success/failure value at once:
+There is another [`map()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#map-java.util.function.Function,java.util.function.Function-) method to transform either success/failure value at once:
 
 ```java
 @Test
@@ -58,10 +55,9 @@ void should_return_lower_case() {
 }
 ```
 
+### Mapping Failure Values
 
-## Mapping Failure Values
-
-And the [`mapFailure()`][MAP_FAILURE] method allows us to transform failure values only:
+And the [`mapFailure()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#mapFailure-java.util.function.Function-) method allows us to transform failure values only:
 
 ```java
 @Test
@@ -75,20 +71,13 @@ void should_return_is_empty() {
 }
 ```
 
+### Flat-Mapping Result Objects
 
-## Flat-Mapping Result Objects
+Just like the `map...` methods, we also have the `flatMap...` family of methods as an alternative for transforming values. The difference is that `map...` methods don't alter the success/failure state of the result, whereas with `flatMap...` ones, you can start with a successful result and end up with a failed one, and _vice versa_.
 
-Just like the `map...` methods, we also have the `flatMap...` family of methods as an alternative for transforming
-values. The difference is that `map...` methods don't alter the success/failure state of the result, whereas with
-`flatMap...` ones, you can start with a successful result and end up with a failed one, and _vice versa_.
+Previously, we created simple `String` and `Integer` objects for wrapping in a `Result` instance. However, frequently, we will receive these objects as we invoke third-party methods.
 
-Previously, we created simple `String` and `Integer` objects for wrapping in a `Result` instance. However, frequently,
-we will receive these objects as we invoke third-party methods.
-
-To get a clearer picture of the difference, let's have a look at a `User` object that takes a `name` and a
-boolean flag that determines if the user has custom configuration. It also has a method `getCustomConfigPath`
-which returns a `Result` containing either the path to the user configuration file, or a `Problem` object
-describing why the path cannot be obtained:
+To get a clearer picture of the difference, let's have a look at a `User` object that takes a `name` and a boolean flag that determines if the user has custom configuration. It also has a method `getCustomConfigPath` which returns a `Result` containing either the path to the user configuration file, or a `Problem` object describing why the path cannot be obtained:
 
 ```java
 class User {
@@ -110,8 +99,7 @@ class User {
 }
 ```
 
-Now suppose we have a method `openFile` which checks if a given file exists and returns a result containing the
-file object or a `Problem` object explaining why the file cannot be retrieved:
+Now suppose we have a method `openFile` which checks if a given file exists and returns a result containing the file object or a `Problem` object explaining why the file cannot be retrieved:
 
 ```java
 Result<File, Problem> openFile(String path) {
@@ -120,8 +108,7 @@ Result<File, Problem> openFile(String path) {
 }
 ```
 
-If we wanted to obtain the file path from the user _and then_ invoke the above method to get the file object, we could
-use [`flatMapSuccess()`][FLATMAP_SUCCESS] to fluently transform one result into another:
+If we wanted to obtain the file path from the user _and then_ invoke the above method to get the file object, we could use [`flatMapSuccess()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#flatMapSuccess-java.util.function.Function-) to fluently transform one result into another:
 
 ```java
 @Test
@@ -158,7 +145,7 @@ void should_contain_file_problem() {
 }
 ```
 
-There is another [`flatMap()`][FLATMAP] method to transform either success/failure values at once:
+There is another [`flatMap()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#flatMap-java.util.function.Function,java.util.function.Function-) method to transform either success/failure values at once:
 
 ```java
 @Test
@@ -173,7 +160,7 @@ void should_contain_123() {
 }
 ```
 
-And the [`flatMapFailure()`][FLATMAP_FAILURE] method allows us to transform failure values only:
+And the [`flatMapFailure()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#flatMapFailure-java.util.function.Function-) method allows us to transform failure values only:
 
 ```java
 @Test
@@ -187,11 +174,3 @@ void should_contain_error() {
     assertThat(result.getFailure()).contains("error");
 }
 ```
-
-
-[MAP]: https://dev.leakyabstractions.com/result/javadoc/{{ site.current_version }}/com/leakyabstractions/result/Result.html#map-java.util.function.Function,java.util.function.Function-
-[MAP_SUCCESS]: https://dev.leakyabstractions.com/result/javadoc/{{ site.current_version }}/com/leakyabstractions/result/Result.html#mapSuccess-java.util.function.Function-
-[MAP_FAILURE]: https://dev.leakyabstractions.com/result/javadoc/{{ site.current_version }}/com/leakyabstractions/result/Result.html#mapFailure-java.util.function.Function-
-[FLATMAP]: https://dev.leakyabstractions.com/result/javadoc/{{ site.current_version }}/com/leakyabstractions/result/Result.html#flatMap-java.util.function.Function,java.util.function.Function-
-[FLATMAP_SUCCESS]: https://dev.leakyabstractions.com/result/javadoc/{{ site.current_version }}/com/leakyabstractions/result/Result.html#flatMapSuccess-java.util.function.Function-
-[FLATMAP_FAILURE]: https://dev.leakyabstractions.com/result/javadoc/{{ site.current_version }}/com/leakyabstractions/result/Result.html#flatMapFailure-java.util.function.Function-
