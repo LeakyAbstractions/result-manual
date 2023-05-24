@@ -1,6 +1,9 @@
 ---
 title: Filtering Values
 description: Conditionally rejecting success values and accepting failure values
+cover: >-
+  https://images.unsplash.com/photo-1516382799247-87df95d790b7?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHwxfHxzY3JlZW5pbmd8ZW58MHx8fHwxNjg0OTMzNzc3fDA&ixlib=rb-4.0.3&q=85
+coverY: 0
 ---
 
 # Screening Results

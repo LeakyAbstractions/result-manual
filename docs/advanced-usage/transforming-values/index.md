@@ -1,6 +1,9 @@
 ---
 title: Transforming Values
 description: Transform values wrapped inside results
+cover: >-
+  https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHwzfHx0cmFuc2Zvcm1hdGlvbnxlbnwwfHx8fDE2ODQ5MzM2ODV8MA&ixlib=rb-4.0.3&q=85
+coverY: 0
 ---
 
 # Transforming Values

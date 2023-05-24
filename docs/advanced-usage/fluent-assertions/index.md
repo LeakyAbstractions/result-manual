@@ -1,6 +1,9 @@
 ---
 title: Fluent Assertions
 description: Asserting Result Objects
+cover: >-
+  https://images.unsplash.com/photo-1615529328331-f8917597711f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHw0fHx3YXRlcnxlbnwwfHx8fDE2ODQ5MzMzNjB8MA&ixlib=rb-4.0.3&q=85
+coverY: 0
 ---
 
 # Fluent Assertions

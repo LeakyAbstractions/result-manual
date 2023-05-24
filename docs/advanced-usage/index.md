@@ -1,7 +1,8 @@
 ---
 title: Advanced Usage
 description: Advanced Usage
-cover: ../.gitbook/assets/advanced-usage.png
+cover: >-
+  https://images.unsplash.com/photo-1555597673-b21d5c935865?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHwyfHxrYXJhdGV8ZW58MHx8fHwxNjg0OTMzODM4fDA&ixlib=rb-4.0.3&q=85
 coverY: 0
 ---
 

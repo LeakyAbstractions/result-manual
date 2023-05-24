@@ -1,21 +1,18 @@
 ---
 title: Unwrapping Values
 description: How to get wrapped values out of Result objects
+coverY: 0
 ---
-
 
 # Unwrapping Values
 
-In a nutshell, a `Result` object is just a container that wraps either a success or a failure value for us. Sometimes we
-may need to simply get that value out of the container.
+In a nutshell, a `Result` object is just a container that wraps either a success or a failure value for us. Sometimes we may need to simply get that value out of the container.
 
 As useful as it may seem at first, we will soon realize that we won't need to do it that often.
 
-
 ## Unwrapping Success Value
 
-The most basic way to retrieve the success value wrapped inside a `Result` instance is [`getSuccess()`][GET_SUCCESS].
-This method will return an optional success value, depending on whether the result is successful or failed.
+The most basic way to retrieve the success value wrapped inside a `Result` instance is [`getSuccess()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#getSuccess--). This method will return an optional success value, depending on whether the result is successful or failed.
 
 ```java
 @Test
@@ -31,10 +28,9 @@ void get_success() {
 }
 ```
 
-
 ## Unwrapping Failure Value
 
-Similarly, we can use [`getFailure()`][GET_FAILURE] to obtain the failure value held by a `Result` object.
+Similarly, we can use [`getFailure()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#getFailure--) to obtain the failure value held by a `Result` object.
 
 ```java
 @Test
@@ -50,15 +46,11 @@ void get_failure() {
 }
 ```
 
-> Note that, unlike [`Optional.get`][OPTIONAL_GET], these methods are null-safe. However, in practice we will not be
-> using them a lot, especially since there are more convenient ways to retrieve the success value out of a `Result`
-> object.
-
+> Note that, unlike [`Optional.get`](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html#get--), these methods are null-safe. However, in practice we will not be using them a lot, especially since there are more convenient ways to retrieve the success value out of a `Result` object.
 
 ## Using Alternative Success Value
 
-For example, we can use [`orElse()`][OR_ELSE] and provide an alternative success value that will be returned in case the
-result is failed.
+For example, we can use [`orElse()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElse-S-) and provide an alternative success value that will be returned in case the result is failed.
 
 ```java
 @Test
@@ -76,12 +68,9 @@ void get_success_or_an_alternative_value() {
 }
 ```
 
-
 ## Mapping Failure Value
 
-The [`orElseMap()`][OR_ELSE_MAP] method is similar to `orElse()`. However, instead of using an alternative success
-value, it takes a mapping function. This function will be applied to the failure value to produce an alternative success
-value:
+The [`orElseMap()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElseMap-java.util.function.Function-) method is similar to `orElse()`. However, instead of using an alternative success value, it takes a mapping function. This function will be applied to the failure value to produce an alternative success value:
 
 ```java
 @Test
@@ -102,11 +91,9 @@ void get_success_or_map_failure_value() {
 }
 ```
 
-
 ## Streaming Success/Failure Value
 
-Finally, we can use [`streamSuccess()`][STREAM_SUCCESS] and [`streamFailure()`][STREAM_FAILURE] to wrap the value held
-by an instance of `Result` into a possibly-empty `Stream` object.
+Finally, we can use [`streamSuccess()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#streamSuccess--) and [`streamFailure()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#streamFailure--) to wrap the value held by an instance of `Result` into a possibly-empty `Stream` object.
 
 ```java
 @Test
@@ -135,13 +122,3 @@ void stream_failure() {
   assertEquals("No", stream2.findFirst().orElse(null));
 }
 ```
-
-
-[GET_SUCCESS]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#getSuccess--
-[GET_FAILURE]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#getFailure--
-[OPTIONAL_OR_ELSE]: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Optional.html#orElse(T)
-[OR_ELSE]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElse-S-
-[OR_ELSE_MAP]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElseMap-java.util.function.Function-
-[STREAM_SUCCESS]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#streamSuccess--
-[STREAM_FAILURE]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#streamFailure--
-[OPTIONAL_GET]: https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html#get--
