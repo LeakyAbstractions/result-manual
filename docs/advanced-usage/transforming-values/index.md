@@ -1,11 +1,9 @@
 ---
 title: Transforming Values
-description: Transform wrapped value to some other value
+description: Transform values wrapped inside results
 ---
 
 # Transforming Values
-
-### Transforming Values
 
 In the previous section, we looked at how to reject or accept a success value based on a filter.
 
