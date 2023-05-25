@@ -1,17 +1,18 @@
 ---
 title: Creating Result Objects
 description: How to instantiate new Result objects
+cover: >-
+  https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHwxfHxwb3R0ZXJ5fGVufDB8fHx8MTY4NTAyMDg2Mnww&ixlib=rb-4.0.3&q=85
+coverY: 0
 ---
-
 
 # Creating Result Objects
 
 There are several ways to create `Result` objects.
 
-
 ## Successful Results
 
-To create a successful result, we use [`Results.success()`][NEW_SUCCESS].
+To create a successful result, we use [`Results.success()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#success-S-).
 
 ```java
 @Test
@@ -24,13 +25,11 @@ void create_successful_result() {
 }
 ```
 
-Note that we can use [`hasSuccess()`][HAS_SUCCESS] or [`hasFailure()`][HAS_FAILURE] to check if a result is successful
-or failed.
-
+Note that we can use [`hasSuccess()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasSuccess--) or [`hasFailure()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasFailure--) to check if a result is successful or failed.
 
 ## Failed Results
 
-On the other hand, if we want to create a failed result, we use [`Results.failure()`][NEW_FAILURE].
+On the other hand, if we want to create a failed result, we use [`Results.failure()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#failure-F-).
 
 ```java
 @Test
@@ -43,10 +42,9 @@ void create_failed_result() {
 }
 ```
 
-
 ## Results Based on Nullable Value
 
-[`Results.ofNullable()`][OF_NULLABLE] can be used to create results that depend on a possibly-null value.
+[`Results.ofNullable()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofNullable-S-F-) can be used to create results that depend on a possibly-null value.
 
 ```java
 @Test
@@ -63,10 +61,9 @@ void create_result_based_on_nullable() {
 }
 ```
 
-
 ## Results Based on Optional Value
 
-We can also use [`Results.ofOptional()`][OF_OPTIONAL] to create results that depend on an optional value.
+We can also use [`Results.ofOptional()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofOptional-java.util.Optional-F-) to create results that depend on an optional value.
 
 ```java
 @Test
@@ -83,11 +80,9 @@ void create_result_based_on_optional() {
 }
 ```
 
-
 ## Results Based on Callable Value
 
-Finally, if we have a task that may either return a success value or throw an exception, we can encapsulate it as a
-result using [`Results.ofCallable()`][OF_CALLABLE], so we don't need to use a _try-catch_ block.
+Finally, if we have a task that may either return a success value or throw an exception, we can encapsulate it as a result using [`Results.ofCallable()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofCallable-java.util.concurrent.Callable-), so we don't need to use a _try-catch_ block.
 
 ```java
 String task1() {
@@ -108,12 +103,3 @@ void create_result_based_on_callable() {
   assertTrue(result2::hasFailure);
 }
 ```
-
-
-[NEW_SUCCESS]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#success-S-
-[NEW_FAILURE]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#failure-F-
-[OF_NULLABLE]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofNullable-S-F-
-[OF_OPTIONAL]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofOptional-java.util.Optional-F-
-[OF_CALLABLE]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofCallable-java.util.concurrent.Callable-
-[HAS_SUCCESS]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasSuccess--
-[HAS_FAILURE]: https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasFailure--

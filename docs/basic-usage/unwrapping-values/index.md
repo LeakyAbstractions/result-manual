@@ -1,6 +1,8 @@
 ---
 title: Unwrapping Values
 description: How to get wrapped values out of Result objects
+cover: >-
+  https://images.unsplash.com/photo-1601758064224-c3c5ec910095?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHw5fHxib3glMjBkb2d8ZW58MHx8fHwxNjg1MDIxMTEyfDA&ixlib=rb-4.0.3&q=85
 coverY: 0
 ---
 

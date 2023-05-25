@@ -1,6 +1,9 @@
 ---
 title: Adding Result to Your Build
 description: How to add Result as a dependency to your build
+cover: >-
+  https://images.unsplash.com/photo-1616628188502-413f2fe46e5e?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHw1fHx0b29sJTIwaGFuZHxlbnwwfHx8fDE2ODUwMjA3MDh8MA&ixlib=rb-4.0.3&q=85
+coverY: 0
 ---
 
 # Adding Result to Your Build

@@ -1,6 +1,8 @@
 ---
 title: Checking Success or Failure
 description: How to find out if a Result is successful or failed
+cover: >-
+  https://images.unsplash.com/photo-1557318041-1ce374d55ebf?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHwyfHxxdWVzdGlvbnxlbnwwfHx8fDE2ODUwMDkyNDh8MA&ixlib=rb-4.0.3&q=85
 coverY: 0
 ---
 

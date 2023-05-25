@@ -1,6 +1,9 @@
 ---
 title: Basic Usage
 description: How to solve simple use-case scenarios
+cover: >-
+  https://images.unsplash.com/photo-1608751819407-6ec94205fd7b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHw2fHxlYXN5fGVufDB8fHx8MTY4NTAxOTQzOXww&ixlib=rb-4.0.3&q=85
+coverY: 0
 ---
 
 # Basic Usage

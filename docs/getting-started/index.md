@@ -1,6 +1,9 @@
 ---
 title: Getting Started
 description: How to start using Result in your own projects
+cover: >-
+  https://images.unsplash.com/photo-1562516155-e0c1ee44059b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHw0fHxzdGFydHxlbnwwfHx8fDE2ODUwMTQxNDd8MA&ixlib=rb-4.0.3&q=85
+coverY: 0
 ---
 
 # Getting Started
