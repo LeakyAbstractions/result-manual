@@ -24,3 +24,7 @@
 * [Jackson Module](advanced-usage/result-jackson-module/index.md)
 * [Fluent Assertions](advanced-usage/fluent-assertions/index.md)
 * [Bill of Materials](advanced-usage/bill-of-materials.md)
+
+## ⚡ Example Project
+
+* [Example Project](example-project/example-project.md)
