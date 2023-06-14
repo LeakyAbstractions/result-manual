@@ -54,10 +54,10 @@ public int getFooLength() {
   int length;
   try {
     String result = foo();
-    this.commit(result);
+    this.ok(result);
     length = result.length();
   } catch(SomeException problem) {
-    this.rollback(problem);
+    this.error(problem);
     length = -1;
   }
   return length;
@@ -71,7 +71,7 @@ Let's now look at how the above code could be refactored if method `foo` returne
 ```java
 public int getFooLength() {
   Result<String, SomeFailure> result = foo();
-  result.ifSuccessOrElse(this::commit, this::rollback);
+  result.ifSuccessOrElse(this::ok, this::error);
   Result<Integer, SomeFailure> resultLength = result.mapSuccess(String::length);
   return resultLength.orElse(-1);
 }
@@ -81,7 +81,8 @@ In the above example, we use only four lines of code to replace the ten that wor
 
 ```java
 public int getFooLength() {
-  return foo().ifSuccessOrElse(this::commit, this::rollback).mapSuccess(String::length).orElse(-1);
+  return foo().ifSuccessOrElse(this::ok, this::error).mapSuccess(String::length)
+    .orElse(-1);
 }
 ```
 
@@ -89,7 +90,7 @@ In fact, since we are using `-1` here just to signal that the underlying operati
 
 ```java
 public Result<Integer, SomeFailure> getFooLength() {
-  return foo().ifSuccessOrElse(this::commit, this::rollback).mapSuccess(String::length);
+  return foo().ifSuccessOrElse(this::ok, this::error).mapSuccess(String::length);
 }
 ```
 
