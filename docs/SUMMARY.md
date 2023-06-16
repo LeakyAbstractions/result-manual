@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Result Library for Java](README.md)
+* [Introduction to Result Library](README.md)
 
 ## 🌱 Getting Started
 
