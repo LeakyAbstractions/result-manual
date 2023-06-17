@@ -1,12 +1,12 @@
 # Table of contents
 
-* [Introduction to Result Library](README.md)
+* [Introduction](README.md)
 
 ## 🌱 Getting Started
 
 * [Getting Started](getting-started/index.md)
 * [Adding Result to Your Build](getting-started/adding-result-to-your-build/index.md)
-* [Creating Result Objects](getting-started/creating-result-objects/index.md)
+* [Creating Results](getting-started/creating-result-objects/index.md)
 
 ## 🪴 Basic Usage
 

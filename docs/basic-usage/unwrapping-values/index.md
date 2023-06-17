@@ -1,9 +1,6 @@
 ---
 title: Unwrapping Values
 description: How to get wrapped values out of Result objects
-cover: >-
-  https://images.unsplash.com/photo-1601758064224-c3c5ec910095?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHw5fHxib3glMjBkb2d8ZW58MHx8fHwxNjg1MDIxMTEyfDA&ixlib=rb-4.0.3&q=85
-coverY: 0
 ---
 
 # Unwrapping Values
@@ -14,7 +11,7 @@ As useful as it may seem at first, we will soon realize that we won't need to do
 
 ## Unwrapping Success Value
 
-The most basic way to retrieve the success value wrapped inside a `Result` instance is [`getSuccess()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#getSuccess--). This method will return an optional success value, depending on whether the result is successful or failed.
+The most basic way to retrieve the success value wrapped inside a `Result` instance is [`Result::getSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#getSuccess--). This method will return an optional success value, depending on whether the result is successful or failed.
 
 ```java
 @Test
@@ -32,7 +29,7 @@ void get_success() {
 
 ## Unwrapping Failure Value
 
-Similarly, we can use [`getFailure()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#getFailure--) to obtain the failure value held by a `Result` object.
+Similarly, we can use [`Result::getFailure`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#getFailure--) to obtain the failure value held by a `Result` object.
 
 ```java
 @Test
@@ -48,11 +45,13 @@ void get_failure() {
 }
 ```
 
-> Note that, unlike [`Optional.get`](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html#get--), these methods are null-safe. However, in practice we will not be using them a lot, especially since there are more convenient ways to retrieve the success value out of a `Result` object.
+{% hint style="info" %}
+Note that, unlike [`Optional::get`](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html#get--), these methods are null-safe. However, in practice, we will not be using them a lot, especially since there are more convenient ways to get the success value out of a result.
+{% endhint %}
 
 ## Using Alternative Success Value
 
-For example, we can use [`orElse()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElse-S-) and provide an alternative success value that will be returned in case the result is failed.
+For example, we can use [`Result::orElse`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElse-S-) and provide an alternative success value that will be returned in case the result is failed.
 
 ```java
 @Test
@@ -72,7 +71,7 @@ void get_success_or_an_alternative_value() {
 
 ## Mapping Failure Value
 
-The [`orElseMap()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElseMap-java.util.function.Function-) method is similar to `orElse()`. However, instead of using an alternative success value, it takes a mapping function. This function will be applied to the failure value to produce an alternative success value:
+The [`Result::orElseMap`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElseMap-java.util.function.Function-) method is similar to `orElse()`. However, instead of using an alternative success value, it takes a mapping function. This function will be applied to the failure value to produce an alternative success value:
 
 ```java
 @Test
@@ -95,7 +94,7 @@ void get_success_or_map_failure_value() {
 
 ## Streaming Success/Failure Value
 
-Finally, we can use [`streamSuccess()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#streamSuccess--) and [`streamFailure()`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#streamFailure--) to wrap the value held by an instance of `Result` into a possibly-empty `Stream` object.
+Finally, we can use [`Result::streamSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#streamSuccess--) and [`Result::streamFailure`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#streamFailure--) to wrap the value held by an instance of `Result` into a possibly-empty `Stream` object.
 
 ```java
 @Test
