@@ -4,6 +4,7 @@
 
 ## 🌱 Getting Started
 
+* [Getting Started](getting-started.md)
 * [Adding Result to Your Build](getting-started/adding-result-to-your-build.md)
 * [Creating Results](getting-started/creating-result-objects.md)
 
