@@ -4,20 +4,20 @@
 
 ## 🌱 Getting Started
 
-* [Getting Started](getting-started/\_.md)
+* [Getting Started](getting-started/start.md)
 * [Adding Result to Your Build](getting-started/adding-result-to-your-build.md)
 * [Creating Results](getting-started/creating-result-objects.md)
 
 ## 🪴 Basic Usage
 
-* [Basic Usage](basic-usage/\_.md)
+* [Basic Usage](basic-usage/basic.md)
 * [Checking Success or Failure](basic-usage/checking-success-or-failure.md)
 * [Unwrapping Values](basic-usage/unwrapping-values.md)
 * [Conditional Actions](basic-usage/conditional-actions.md)
 
 ## 🚀 Advanced Usage
 
-* [Advanced Usage](advanced-usage/\_.md)
+* [Advanced Usage](advanced-usage/advanced.md)
 * [Screening Results](advanced-usage/screening-results.md)
 * [Transforming Values](advanced-usage/transforming-values.md)
 * [Lazy Results](advanced-usage/lazy-results.md)
@@ -27,4 +27,4 @@
 
 ## ⚡ Example Project
 
-* [Example Project](example-project/\_.md)
+* [Example Project](example-project/example.md)

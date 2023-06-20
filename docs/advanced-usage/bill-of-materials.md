@@ -1,8 +1,5 @@
 ---
 description: Declare dependencies without having to worry about version numbers
-cover: >-
-  https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHwzfHxwYWNrYWdlfGVufDB8fHx8MTY4NDkzMTQ1MHww&ixlib=rb-4.0.3&q=85
-coverY: 0
 ---
 
 # Bill of Materials

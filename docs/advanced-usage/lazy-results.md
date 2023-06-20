@@ -1,13 +1,10 @@
 ---
 description: Deferring expensive calculation of Results
-cover: >-
-  https://images.unsplash.com/photo-1616890069499-f05321ca20fa?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHw3fHxzbG90aHxlbnwwfHx8fDE2ODQ5MzM1OTZ8MA&ixlib=rb-4.0.3&q=85
-coverY: 100
 ---
 
 # Lazy Results
 
-There's also a way to encapsulate expensive operations that can be entirely omitted (as an optimization) if there's no actual need to examine the result. To create a _lazy_ result we need to use static method `Results.lazy()`:
+There's also a way to encapsulate expensive operations that can be entirely omitted (as an optimization) if there's no actual need to examine the result. To create a _lazy_ result we need to use static method [`LazyResults::ofSupplier`](https://dev.leakyabstractions.com/result-lazy/javadoc/0.5.0.2/com/leakyabstractions/result/lazy/LazyResults.html#ofSupplier-java.util.function.Supplier-):
 
 ```java
     Result<String, Void> expensiveCalculation(AtomicLong timesExecuted) {
