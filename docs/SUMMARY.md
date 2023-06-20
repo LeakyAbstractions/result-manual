@@ -2,6 +2,8 @@
 
 * [Introduction](README.md)
 
+* [Getting Started](getting-started.md)
+
 ## 🌱 Getting Started
 
 * [Getting Started](getting-started.md)
