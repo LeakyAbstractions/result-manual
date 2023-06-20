@@ -1,5 +1,8 @@
 ---
 description: Deferring expensive calculation of Results
+cover: >-
+  https://images.unsplash.com/photo-1616890069499-f05321ca20fa?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHw3fHxzbG90aHxlbnwwfHx8fDE2ODQ5MzM1OTZ8MA&ixlib=rb-4.0.3&q=85
+coverY: 100
 ---
 
 # Lazy Results

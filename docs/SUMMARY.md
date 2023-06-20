@@ -10,19 +10,19 @@
 
 ## 🪴 Basic Usage
 
-* [Basic Usage](basic-usage/basic-usage.md)
-* [Checking Success or Failure](basic-usage/index.md)
-* [Unwrapping Values](basic-usage/index-1.md)
-* [Conditional Actions](basic-usage/index-2.md)
+* [Basic Usage](basic-usage/index.md)
+* [Checking Success or Failure](basic-usage/checking-success-or-failure.md)
+* [Unwrapping Values](basic-usage/unwrapping-values.md)
+* [Conditional Actions](basic-usage/conditional-actions.md)
 
 ## 🚀 Advanced Usage
 
-* [Advanced Usage](advanced-usage/index.md)
-* [Screening Results](advanced-usage/screening-values/index.md)
-* [Transforming Values](advanced-usage/transforming-values/index.md)
-* [Lazy Results](advanced-usage/lazy-results/index.md)
-* [Jackson Module](advanced-usage/result-jackson-module/index.md)
-* [Fluent Assertions](advanced-usage/fluent-assertions/index.md)
+* [Advanced Usage](advanced-usage/readme.md)
+* [Screening Results](advanced-usage/screening-results.md)
+* [Transforming Values](advanced-usage/transforming-values.md)
+* [Lazy Results](advanced-usage/lazy-results.md)
+* [Jackson Module](advanced-usage/jackson-module.md)
+* [Fluent Assertions](advanced-usage/fluent-assertions.md)
 * [Bill of Materials](advanced-usage/bill-of-materials.md)
 
 ## ⚡ Example Project
