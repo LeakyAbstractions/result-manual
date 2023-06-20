@@ -1,9 +1,10 @@
 ---
 title: Page title
 description: A Java library to handle success and failure without exceptions
+layout: landing
 ---
 
-# Result Library for Java
+# Introduction
 
 <figure><img src="https://raw.githubusercontent.com/LeakyAbstractions/result/main/docs/result-magic-ball.png" alt=""><figcaption></figcaption></figure>
 
