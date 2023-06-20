@@ -1,6 +1,7 @@
 ---
 title: Getting Started
 description: How to start using Result in your own projects
+coverY: 0
 ---
 
 # Getting Started
