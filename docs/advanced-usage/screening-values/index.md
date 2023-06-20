@@ -7,11 +7,11 @@ description: Conditionally rejecting success values and accepting failure values
 
 Often, something that a lower logic layer considers a _success_ can be considered a _failure_ by an upper layer. Or _vice versa_.
 
-Results provide convenient methods for rejecting success values as well as accepting failure values, based on a predefined rule.
+Results provide convenient methods for rejecting success values as well as accepting failure values, based on a predefined rule that is represented by a [`Predicate`](https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/function/Predicate.html).
 
 ## Rejecting Success
 
-We can run an inline test on our wrapped success value with [`Result::filter`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#filter-java.util.function.Predicate-java.util.function.Function-). This method takes a [`Predicate`](https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/function/Predicate.html) and a mapping function as arguments and returns a possibly-new result object:
+We can run an inline test on our wrapped success value with [`Result::filter`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#filter-java.util.function.Predicate-java.util.function.Function-). This method takes a predicate and a mapping function as arguments and returns a possibly-new result object:
 
 * If the result has a success value that doesn't satisfy the predicate, `filter` will return a new result object containing the failure value produced by the mapping function.
 * Otherwise, the result will be returned as-is.
@@ -50,7 +50,7 @@ void filter_successful_result_to_null() {
 
 ## Recovering From Failure
 
-We can run an inline test on our wrapped failure value with [`Result::recover`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#recover-java.util.function.Predicate-java.util.function.Function-). This method takes a `Predicate` and a mapping function as arguments and returns a possibly-new `Result` object:
+We can run an inline test on our wrapped failure value with [`Result::recover`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#recover-java.util.function.Predicate-java.util.function.Function-). This method takes a predicate and a mapping function as arguments and returns a possibly-new `Result` object:
 
 * If the result has a failure value that satisfies the predicate, `recover` will return a new result object containing the success value produced by the mapping function.
 * Otherwise, the result will be returned as-is.
