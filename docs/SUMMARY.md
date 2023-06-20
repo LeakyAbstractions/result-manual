@@ -9,10 +9,10 @@
 
 ## 🪴 Basic Usage
 
-* [Basic Usage](basic-usage/index.md)
-* [Checking Success or Failure](basic-usage/checking-success-or-failure/index.md)
-* [Unwrapping Values](basic-usage/unwrapping-values/index.md)
-* [Conditional Actions](basic-usage/conditional-actions/index.md)
+* [Basic Usage](basic-usage/basic-usage.md)
+* [Checking Success or Failure](basic-usage/index.md)
+* [Unwrapping Values](basic-usage/index-1.md)
+* [Conditional Actions](basic-usage/index-2.md)
 
 ## 🚀 Advanced Usage
 
