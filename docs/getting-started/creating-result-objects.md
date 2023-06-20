@@ -1,86 +1,104 @@
 ---
-description: Creating Result Objects
+title: Creating Result Objects
+description: How to instantiate new Result objects
 ---
 
-# Instantiating Result
+# Creating Results
 
-There are several ways of creating `Result` objects.
+There are several ways to create `Result` objects.
 
-### Successful Result <a href="#creating-result-objects" id="creating-result-objects"></a>
+## Successful Results
 
-To create a successful result, we simply need to use static method `Results.success()`:
+To create a successful result, we use [`Results::success`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#success-S-).
 
 ```java
 @Test
-void should_be_success() {
-    // When
-    final Result<Integer, ?> result = Results.success(123);
-    // Then
-    assertThat(result.isSuccess()).isTrue();
+void create_successful_result() {
+  // When
+  final Result<Integer, ?> result = Results.success(200);
+  // Then
+  assertTrue(result::hasSuccess);
+  assertFalse(result::hasFailure);
 }
 ```
 
-Note that we can use methods `isSuccess()` or `isFailure()` to check if the result was\
-successful or not.
+{% hint style="success" %}
+Note that we can invoke [`Result::hasSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasSuccess--) or [`Result::hasFailure`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasFailure--) to check if a result is successful or failed.
+{% endhint %}
 
-### Failed Result
+## Failed Results
 
-On the other hand, if we want to create a failed result, we can use static method `Results.failure()`:
+On the other hand, if we want to create a failed result, we use [`Results::failure`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#failure-F-).
 
 ```java
 @Test
-void should_be_failure() {
-    // When
-    final Result<?, String> result = Results.failure("The operation failed");
-    // Then
-    assertThat(result.isSuccess()).isFalse();
+void create_failed_result() {
+  // When
+  final Result<?, String> result = Results.failure("The operation failed");
+  // Then
+  assertTrue(result::hasFailure);
+  assertFalse(result::hasSuccess);
 }
 ```
 
-### Result Based on Nullable Value
+## Results Based on Nullable Values
 
-We can use static method `Results.ofNullable()` to create results that depend on a possibly-null value:
+[`Results::ofNullable`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofNullable-S-F-) can be used to create results that depend on a possibly-null value.
 
 ```java
 @Test
-void should_not_be_failure() {
-    // Given
-    final String nullable = "Hello world!";
-    // When
-    final Result<String, Integer> result = Results.ofOptional(nullable, 0);
-    // Then
-    assertThat(result.isSuccess()).isTrue();
+void create_result_based_on_nullable() {
+  // Given
+  final String string1 = "The operation succeeded";
+  final String string2 = null;
+  // When
+  final Result<String, Integer> result1 = Results.ofNullable(string1, 404);
+  final Result<String, Integer> result2 = Results.ofNullable(string2, 404);
+  // Then
+  assertTrue(result1::hasSuccess);
+  assertTrue(result2::hasFailure);
 }
 ```
 
-### Result Based on Optional Value
+## Results Based on Optional Values
 
-We can also use static method `Results.ofOptional()` to create results that depend on an optional value:
+We can also use [`Results::ofOptional`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofOptional-java.util.Optional-F-) to create results that depend on an optional value.
 
 ```java
 @Test
-void should_not_be_success() {
-    // Given
-    final Optional<String> optional = Optional.empty();
-    // When
-    final Result<String, Integer> result = Results.ofOptional(optional, -1);
-    // Then
-    assertThat(result.isFailure()).isTrue();
+void create_result_based_on_optional() {
+  // Given
+  final Optional<BigDecimal> optional1 = Optional.of(BigDecimal.ONE);
+  final Optional<BigDecimal> optional2 = Optional.empty();
+  // When
+  final Result<BigDecimal, Integer> result1 = Results.ofOptional(optional1, -1);
+  final Result<BigDecimal, Integer> result2 = Results.ofOptional(optional2, -1);
+  // Then
+  assertTrue(result1::hasSuccess);
+  assertTrue(result2::hasFailure);
 }
 ```
 
-### Result Based on Callable Value
+## Results Based on Callable Values
 
-And sometimes it might come in handy to wrap actual thrown exceptions inside a result object via static method `Results.ofCallable()`:
+Finally, if we have a task that may either return a success value or throw an exception, we can encapsulate it as a result using [`Results::ofCallable`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofCallable-java.util.concurrent.Callable-), so we don't need to use a _try-catch_ block.
 
 ```java
+String task1() {
+  return "OK";
+}
+
+String task2() throws Exception {
+  throw new Exception("Whoops!");
+}
+
 @Test
-void should_wrap_exception() {
-    // Given
-    final Callable<String> callable = () -> { throw new RuntimeException("Whoops!") };
-    // When
-    final Result<String, Exception> result = Results.ofCallable(callable);
-    // Then
-    assertThat(result.isFailure()).isTrue();
+void create_result_based_on_callable() {
+  // When
+  final Result<String, Exception> result1 = Results.ofCallable(this::task1);
+  final Result<String, Exception> result2 = Results.ofCallable(this::task2);
+  // Then
+  assertTrue(result1::hasSuccess);
+  assertTrue(result2::hasFailure);
 }
 ```

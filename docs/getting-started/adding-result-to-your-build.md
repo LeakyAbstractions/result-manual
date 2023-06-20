@@ -1,20 +1,21 @@
 ---
-description: Adding Result as a dependency to your build
+title: Adding Result to Your Build
+description: How to add Result as a dependency to your build
 ---
 
 # Adding Result to Your Build
 
 The library requires JDK 1.8 or higher. Other than that, it has no external dependencies and it is very lightweight. Adding it to your build should be very easy.
 
-### Artifact coordinates
+## Artifact coordinates
 
 * Group ID: `com.leakyabstractions`
 * Artifact ID: `result`
 * Version: `1.0.0.0`
 
-### Maven
+## Maven
 
-To add a dependency on `Result` using [**Maven**](https://maven.apache.org/), use the following:
+To use `Result`, we can add a [**Maven**](https://maven.apache.org/) dependency to our project.
 
 ```xml
 <dependencies>
@@ -27,9 +28,9 @@ To add a dependency on `Result` using [**Maven**](https://maven.apache.org/), us
 </dependencies>
 ```
 
-### Gradle
+## Gradle
 
-To add the dependency using [**Gradle**](https://gradle.org/), if you are building an application that will use `Result` internally:
+We can also add `Result` as a [**Gradle**](https://gradle.org/) dependency.
 
 ```
 dependencies {
@@ -37,7 +38,7 @@ dependencies {
 }
 ```
 
-If you are building a library that will use `Result` type in its public API, you should use instead:
+This is the most common configuration when we are building an application that uses `Result` internally. If we were building a library that exposed `Result` in its public API, we should use instead:
 
 ```
 dependencies {
@@ -46,5 +47,5 @@ dependencies {
 ```
 
 {% hint style="info" %}
-For more information on when to use api and implementation, read the [Gradle documentation on API and implementation separation](https://docs.gradle.org/current/userguide/java\_library\_plugin.html#sec:java\_library\_separation).
+For more information on when to use `api` and `implementation`, read the [Gradle documentation on API and implementation separation](https://docs.gradle.org/current/userguide/java\_library\_plugin.html#sec:java\_library\_separation).
 {% endhint %}

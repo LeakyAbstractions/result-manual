@@ -5,9 +5,8 @@
 ## 🌱 Getting Started
 
 * [Getting Started](getting-started/index.md)
-* [Adding Result to Your Build](getting-started/adding-result-to-your-build/index.md)
-* [Page 1](getting-started/page-1.md)
-* [Creating Results](getting-started/creating-result-objects/index.md)
+* [Adding Result to Your Build](getting-started/adding-result-to-your-build.md)
+* [Creating Results](getting-started/creating-result-objects.md)
 
 ## 🪴 Basic Usage
 
