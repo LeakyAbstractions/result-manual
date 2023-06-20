@@ -30,7 +30,7 @@ void should_pass_test() {
 }
 ```
 
-{% hint style="info" %}
+{% hint style="danger" %}
 Note that it is illegal for a mapping function to return `null`.
 {% endhint %}
 
@@ -72,7 +72,7 @@ void recover_failed_result() {
 }
 ```
 
-{% hint style="info" %}
+{% hint style="danger" %}
 Note that it is illegal for a mapping function to return `null`.
 {% endhint %}
 
