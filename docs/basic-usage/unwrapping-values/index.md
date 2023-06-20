@@ -69,6 +69,10 @@ void get_success_or_an_alternative_value() {
 }
 ```
 
+{% hint style="info" %}
+Note that the alternative success value can be `null`.
+{% endhint %}
+
 ## Mapping Failure Value
 
 The [`Result::orElseMap`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElseMap-java.util.function.Function-) method is similar to `orElse()`. However, instead of using an alternative success value, it takes a mapping function. This function will be applied to the failure value to produce an alternative success value:
@@ -91,6 +95,10 @@ void get_success_or_map_failure_value() {
   assertEquals("LO", value3);
 }
 ```
+
+{% hint style="info" %}
+Note that, although the mapping function may return `null`, it is not the best practice.
+{% endhint %}
 
 ## Streaming Success/Failure Value
 
