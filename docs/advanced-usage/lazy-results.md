@@ -16,7 +16,7 @@ Artifact coordinates:
 
 ## Lazy Results Based on Suppliers
 
-When we have an expression that supplies a result object, we can use [`LazyResults::ofSupplier`](https://dev.leakyabstractions.com/result-lazy/javadoc/0.5.0.2/com/leakyabstractions/result/lazy/LazyResults.html#ofSupplier-java.util.function.Supplier-) to encapsulate it as a lazy result.
+When we have an expression that supplies a result object, we can use [`LazyResults::ofSupplier`][OF_SUPPLIER] to encapsulate it as a lazy result.
 
 ```java
 @Test
@@ -40,9 +40,10 @@ Note that it is illegal for the `supplier` to return `null`.
 
 ## Lazy Results Based on Callables
 
-If we have a task that may either return a success value or throw an exception, we can encapsulate it as a lazy result using[`LazyResults::ofCallable`](https://dev.leakyabstractions.com/result-lazy/javadoc/0.5.0.2/com/leakyabstractions/result/lazy/LazyResults.html#ofCallable-java.util.concurrent.Callable-).
+If we have a task that may either return a success value or throw an exception, we can encapsulate it as a lazy result using [`LazyResults::ofCallable`][OF_CALLABLE].
 
-<pre class="language-java"><code class="lang-java">String task() {
+```java
+String task() {
   return "OK";
 }
 
@@ -52,8 +53,8 @@ void create_lazy_result_based_on_callable() {
   final Result&#x3C;String, Exception> result = LazyResults.ofCallable(this::task);
   // Then
   assertTrue(result::hasSuccess);
-<strong>}
-</strong></code></pre>
+}
+```
 
 ## Handling Lazy Results
 
@@ -138,3 +139,7 @@ Using any of these methods on a lazy result will execute the expensive operation
 * `streamSuccess`
 * `streamFailure`
 {% endhint %}
+
+
+[OF_SUPPLIER]: https://dev.leakyabstractions.com/result-lazy/javadoc/1.0.0.0/com/leakyabstractions/result/lazy/LazyResults.html#ofSupplier-java.util.function.Supplier-
+[OF_CALLABLE]: https://dev.leakyabstractions.com/result-lazy/javadoc/1.0.0.0/com/leakyabstractions/result/lazy/LazyResults.html#ofCallable-java.util.concurrent.Callable-
