@@ -8,14 +8,14 @@
 * [Adding Result to Your Build](getting-started/adding-result-to-your-build.md)
 * [Creating Results](getting-started/creating-result-objects.md)
 
-## Basic Usage
+## 🪴 Basic Usage
 
 * [Basic Usage](basic-usage/index.md)
 * [Checking Success or Failure](basic-usage/checking-success-or-failure.md)
 * [Unwrapping Values](basic-usage/unwrapping-values.md)
 * [Conditional Actions](basic-usage/conditional-actions.md)
 
-## Advanced Usage
+## 🚀 Advanced Usage
 
 * [Advanced Usage](advanced-usage/index.md)
 * [Screening Results](advanced-usage/screening-results.md)
