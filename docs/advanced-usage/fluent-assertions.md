@@ -7,26 +7,17 @@ description: Asserting Result Objects
 
 You can use fluent assertions (based on [AssertJ](https://assertj.github.io/)) for Result objects in your unit tests.
 
-To add a dependency on Result assertions using **Maven**, use the following:
+## Adding Lazy Results to Your Build
 
-```xml
-<dependency>
-    <groupId>com.leakyabstractions</groupId>
-    <artifactId>result-assertj</artifactId>
-    <version>1.0.0.0</version>
-    <scope>test</scope>
-</dependency>
-```
+Artifact coordinates:
 
-To add a dependency using **Gradle**:
+* Group ID: `com.leakyabstractions`
+* Artifact ID: `result-assertj`
+* Version: `1.0.0.0`
 
-```
-dependencies {
-    testImplementation 'com.leakyabstractions:result-assertj:{{ site.current_version }}'
-}
-```
+## How to Use Fluent Assertions
 
-This allows you to use `Result` assertions in your tests via `assertThat`:
+Static method `ResultAssertions::assertThat` allows us to use `Result` assertions in your tests:
 
 ```java
 import static com.leakyabstractions.result.assertj.ResultAssertions.assertThat;
@@ -43,7 +34,7 @@ public void should_pass() {
 }
 ```
 
-If, for some reason, you cannot statically import static method `ResultAssertions.assertThat` you can use static method `ResultAssert.assertThatResult` instead:
+If, for some reason, we cannot statically import this method, we can use `ResultAssert::assertThatResult` instead:
 
 ```java
 import static com.leakyabstractions.result.assertj.ResultAssert.assertThatResult;

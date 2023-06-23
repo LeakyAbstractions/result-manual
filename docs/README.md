@@ -23,13 +23,12 @@ The best way to think of `Result` is as a super-powered version of `Optional`. T
 | ----------------- | ----------------- |
 | `isPresent`       | `isSuccess`       |
 | `isEmpty`         | `isFailure`       |
-| `get`             |                   |
+| `get`             | `getSuccess`      |
+|                   | `getFailure`      |
 | `orElse`          | `orElse`          |
 | `orElseGet`       | `orElseMap`       |
 | `orElseThrow`     |                   |
-|                   | `optional`        |
-|                   | `optionalFailure` |
-| `stream`          | `stream`          |
+| `stream`          | `streamSuccess`   |
 |                   | `streamFailure`   |
 | `ifPresent`       | `ifSuccess`       |
 |                   | `ifFailure`       |

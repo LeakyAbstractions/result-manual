@@ -60,7 +60,7 @@ void create_result_based_on_nullable() {
 }
 ```
 
-## Results Based on Optional Values
+## Results Based on Optionals
 
 We can also use [`Results::ofOptional`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofOptional-java.util.Optional-F-) to create results that depend on an optional value.
 
@@ -79,7 +79,7 @@ void create_result_based_on_optional() {
 }
 ```
 
-## Results Based on Callable Values
+## Results Based on Callables
 
 Finally, if we have a task that may either return a success value or throw an exception, we can encapsulate it as a result using [`Results::ofCallable`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofCallable-java.util.concurrent.Callable-), so we don't need to use a _try-catch_ block.
 

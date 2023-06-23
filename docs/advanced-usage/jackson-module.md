@@ -142,9 +142,9 @@ What we want, is for Jackson to treat `Result` values as JSON objects that conta
 
 First, let's add the latest version as a Maven dependency:
 
-* groupId: `com.leakyabstractions`
-* artifactId: `result-jackson`
-* version: `{{ site.current_version }}`
+* Group ID: `com.leakyabstractions`
+* Artifact ID: `result-jackson`
+* Version: `1.0.0.0`
 
 All we need to do now is register `ResultModule` with our object mapper:
 

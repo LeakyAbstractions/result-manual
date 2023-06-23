@@ -31,7 +31,7 @@ void should_pass_test() {
 ```
 
 {% hint style="danger" %}
-Note that it is illegal for a mapping function to return `null`.
+Note that it is illegal for the `mapper` to return `null`.
 {% endhint %}
 
 ```java
@@ -73,7 +73,7 @@ void recover_failed_result() {
 ```
 
 {% hint style="danger" %}
-Note that it is illegal for a mapping function to return `null`.
+It's also illegal for this `mapper` to return `null`.
 {% endhint %}
 
 <pre class="language-java"><code class="lang-java"><strong>@Test

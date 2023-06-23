@@ -100,7 +100,7 @@ void get_success_or_map_failure_value() {
 Note that, although the mapping function may return `null`, it is not the best practice.
 {% endhint %}
 
-## Streaming Success/Failure Value
+## Streaming Success/Failure Values
 
 Finally, we can use [`Result::streamSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#streamSuccess--) and [`Result::streamFailure`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#streamFailure--) to wrap the value held by an instance of `Result` into a possibly-empty `Stream` object.
 

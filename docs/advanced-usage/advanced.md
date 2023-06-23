@@ -1,6 +1,6 @@
 ---
 title: Advanced Usage
-description: Advanced Usage
+description: How to take Result objects to the next level
 ---
 
 # Advanced Usage

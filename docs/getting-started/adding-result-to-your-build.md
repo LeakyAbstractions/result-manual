@@ -5,7 +5,7 @@ description: How to add Result as a dependency to your build
 
 # Adding Result to Your Build
 
-The library requires JDK 1.8 or higher. Other than that, it has no external dependencies and it is very lightweight. Adding it to your build should be very easy.
+The latest releases are available in [Maven Central](https://central.sonatype.com/artifact/com.leakyabstractions/result/1.0.0.0).
 
 ## Artifact coordinates
 
