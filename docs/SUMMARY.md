@@ -17,7 +17,7 @@
 
 ## 🚀 Advanced Usage
 
-* [Advanced Usage](advanced-usage/advanced.md)
+* [Advanced Usage](advanced-usage/index.md)
 * [Screening Results](advanced-usage/screening-results.md)
 * [Transforming Values](advanced-usage/transforming-values.md)
 * [Lazy Results](advanced-usage/lazy-results.md)
