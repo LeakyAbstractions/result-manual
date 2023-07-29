@@ -11,41 +11,6 @@ The purpose of this library is to type-safely encapsulate the output of operatio
 
 If you like `Optional` but feel that it sometimes falls too short, you'll love `Result`.
 
-{% tabs %}
-{% tab title="Result vs Optional" %}
-The best way to think of results is as a super-powered version of optionals.
-
-The main difference is that an optional object can only express the presence or absence of a value, whereas a result object may contain either a success value or a failure value that can be used to reason about what went wrong.
-
-`Result` objects have methods equivalent to those of `Optional`, plus a few more for handling failure.
-{% endtab %}
-
-{% tab title="Methods" %}
-| Optional          | Result            |
-| ----------------- | ----------------- |
-| `isPresent`       | `isSuccess`       |
-| `isEmpty`         | `isFailure`       |
-| `get`             | `getSuccess`      |
-|                   | `getFailure`      |
-| `orElse`          | `orElse`          |
-| `orElseGet`       | `orElseMap`       |
-| `orElseThrow`     |                   |
-| `stream`          | `streamSuccess`   |
-|                   | `streamFailure`   |
-| `ifPresent`       | `ifSuccess`       |
-|                   | `ifFailure`       |
-| `ifPresentOrElse` | `ifSuccessOrElse` |
-| `filter`          | `filter`          |
-|                   | `recover`         |
-| `map`             | `mapSuccess`      |
-|                   | `mapFailure`      |
-|                   | `map`             |
-| `flatMap`         | `flatMapSuccess`  |
-| `or`              | `flatMapFailure`  |
-|                   | `flatMap`         |
-{% endtab %}
-{% endtabs %}
-
 ### Result Library in a Nutshell
 
 Before `Result`, we would wrap the invocation of an exception-throwing method `foo` inside a `try` block so that errors can be handled inside a `catch` block.
