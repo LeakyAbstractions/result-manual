@@ -5,17 +5,19 @@ description: A Java library to handle success and failure without exceptions
 
 # Introduction
 
-<figure><img src="https://raw.githubusercontent.com/LeakyAbstractions/result/main/docs/result-magic-ball.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/LeakyAbstractions/result/main/docs/result-magic-ball.png" alt=""><figcaption><p><em><code>Result</code> objects have all the answers you need</em></p></figcaption></figure>
 
-The purpose of this library is to provide a type-safe encapsulation of operation results that may have succeeded or failed, instead of throwing exceptions.
+The purpose of this library is to type-safely encapsulate the output of operations that may _succeed_ or _fail_, instead of throwing exceptions.
 
 If you like `Optional` but feel that it sometimes falls too short, you'll love `Result`.
 
-The best way to think of `Result` is as a super-powered version of `Optional`. The only difference is that whereas `Optional` may contain a successful value or express the absence of a value, `Result` contains either a successful value or a failure value that explains what went wrong.
-
 {% tabs %}
 {% tab title="Result vs Optional" %}
-`Result` objects have methods equivalent to those in `Optional`, plus a few more to handle failure values.
+The best way to think of results is as a super-powered version of optionals.
+
+The main difference is that an optional object can only express the presence or absence of a value, whereas a result object may contain either a success value or a failure value that can be used to reason about what went wrong.
+
+`Result` objects have methods equivalent to those of `Optional`, plus a few more for handling failure.
 {% endtab %}
 
 {% tab title="Methods" %}
@@ -46,7 +48,7 @@ The best way to think of `Result` is as a super-powered version of `Optional`. T
 
 ### Result Library in a Nutshell
 
-Before `Result`, we would wrap exception-throwing `foo` method invocation inside a `try` block so that errors can be handled inside a `catch` block.
+Before `Result`, we would wrap the invocation of an exception-throwing method `foo` inside a `try` block so that errors can be handled inside a `catch` block.
 
 ```java
 public int getFooLength() {
@@ -63,9 +65,9 @@ public int getFooLength() {
 }
 ```
 
-This approach is lengthy, and that's not the only problem -- it's also slow. Conventional wisdom says that exceptional logic shouldn't be used for normal program flow. `Result` makes us deal with expected, non-exceptional error situations explicitly as a way of enforcing good programming practices.
+This approach is lengthy, and that's not the only problem — it's also slow. Conventional wisdom says that exceptional logic shouldn't be used for normal program flow. `Result` makes us deal with expected, non-exceptional error situations explicitly as a way to enforce good programming practices and make our programs run faster.
 
-Let's now look at how the above code could be refactored if method `foo` returned a `Result` object instead of throwing an exception:
+Let's now look at how the above code could be refactored if `foo` returned a result object instead of throwing an exception:
 
 ```java
 public int getFooLength() {
