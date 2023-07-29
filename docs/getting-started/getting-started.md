@@ -8,8 +8,6 @@ The best way to think of results is as a super-powered version of Java optionals
 
 The main difference is that an optional instance can only express the _presence_ or _absence_ of a value, whereas a result object may contain either a _success value_ or a _failure value_ that can be used to reason about what went wrong.
 
-`Result` objects have methods equivalent to those of `Optional`, plus a few more for handling failure.
-
 | Optional          | Result            |
 | ----------------- | ----------------- |
 | `isPresent`       | `isSuccess`       |
@@ -32,3 +30,5 @@ The main difference is that an optional instance can only express the _presence_
 | `flatMap`         | `flatMapSuccess`  |
 | `or`              | `flatMapFailure`  |
 |                   | `flatMap`         |
+
+As you can see, `Result` objects have methods equivalent to those of `Optional`, plus a few more for handling failure cases.
