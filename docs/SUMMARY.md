@@ -8,6 +8,14 @@
 * [Adding Result to Your Build](getting-started/adding-result-to-your-build.md)
 * [Creating Results](getting-started/creating-result-objects.md)
 
+***
+
+* [🌱 How to Get Started](how-to-get-started/README.md)
+  * [Adding Result to Your Build](how-to-get-started/adding-result-to-your-build.md)
+  * [Creating Results](how-to-get-started/creating-result-objects.md)
+
+## 🌱 Copy of Getting Started
+
 ## 🪴 Basic Usage
 
 * [Basic Usage](basic-usage/index.md)
