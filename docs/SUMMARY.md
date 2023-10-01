@@ -2,34 +2,20 @@
 
 * [🏠 Introduction](README.md)
 
-## 🌱 Getting Started
+## Using the Library
 
-* [Getting Started](getting-started/getting-started.md)
-* [Adding Result to Your Build](getting-started/adding-result-to-your-build.md)
-* [Creating Results](getting-started/creating-result-objects.md)
+* [🌱 Getting Started](using-the-library/getting-started/README.md)
+  * [Adding Result to Your Build](using-the-library/getting-started/adding-result-to-your-build.md)
+  * [Creating Results](using-the-library/getting-started/creating-result-objects.md)
+* [🪴 Basic Usage](using-the-library/index/README.md)
+  * [Checking Success or Failure](using-the-library/index/checking-success-or-failure.md)
+  * [Unwrapping Values](using-the-library/index/unwrapping-values.md)
+  * [🚧 Conditional Actions](using-the-library/index/conditional-actions.md)
+* [🚀 Advanced Usage](using-the-library/index-1/README.md)
+  * [Screening Results](using-the-library/index-1/screening-results.md)
+  * [Transforming Values](using-the-library/index-1/transforming-values.md)
 
-***
-
-* [🌱 How to Get Started](how-to-get-started/README.md)
-  * [Adding Result to Your Build](how-to-get-started/adding-result-to-your-build.md)
-  * [Creating Results](how-to-get-started/creating-result-objects.md)
-
-## 🌱 Copy of Getting Started
-
-## 🪴 Basic Usage
-
-* [Basic Usage](basic-usage/index.md)
-* [Checking Success or Failure](basic-usage/checking-success-or-failure.md)
-* [Unwrapping Values](basic-usage/unwrapping-values.md)
-* [🚧 Conditional Actions](basic-usage/conditional-actions.md)
-
-## 🚀 Advanced Usage
-
-* [Advanced Usage](advanced-usage/index.md)
-* [Screening Results](advanced-usage/screening-results.md)
-* [Transforming Values](advanced-usage/transforming-values.md)
-
-## ⚡ Bells and whistles
+## Bells and whistles
 
 * [Library Performance](bells-and-whistles/library-performance.md)
 * [Lazy Results](bells-and-whistles/lazy-results.md)
