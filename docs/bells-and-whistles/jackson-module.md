@@ -1,5 +1,4 @@
 ---
-title: Jackson Datatype Module for Result
 description: Result-Jackson provides a Jackson datatype module for Result objects
 ---
 

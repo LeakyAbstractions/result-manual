@@ -6,7 +6,7 @@ description: How to get started with results
 
 The best way to think of results is as a super-powered version of Java optionals.
 
-The main difference is that an optional instance can only express the _presence_ or _absence_ of a value, whereas a result object may contain either a _success value_ or a _failure value_ that can be used to reason about what went wrong.
+The main difference is that an `Optional` instance can only express the _presence_ or _absence_ of a value, whereas a `Result` object may contain either a _success value_ or a _failure value_ that can be used to reason about what went wrong.
 
 | Optional          | Result            |
 | ----------------- | ----------------- |

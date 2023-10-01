@@ -1,5 +1,4 @@
 ---
-title: Fluent Assertions
 description: Asserting Result Objects
 ---
 

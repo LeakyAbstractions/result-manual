@@ -3,13 +3,13 @@ title: Page title
 description: A Java library to handle success and failure without exceptions
 ---
 
-# Introduction
+# 🏠 Introduction
 
-<figure><img src="https://raw.githubusercontent.com/LeakyAbstractions/result/main/docs/result-magic-ball.png" alt=""><figcaption><p><em><code>Result</code> objects have all the answers you need</em></p></figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/LeakyAbstractions/result/main/docs/result-magic-ball.png" alt="Result is a Java library to handle success and failure without exceptions."><figcaption><p><em><code>Result</code> objects have all the answers you need</em></p></figcaption></figure>
 
 The purpose of this library is to type-safely encapsulate the output of operations that may _succeed_ or _fail_, instead of throwing exceptions.
 
-If you like `Optional` but feel that it sometimes falls too short, you'll love `Result`.
+If you like `Optional` but feel that it sometimes falls too short, you will feel right at home.
 
 ### Result Library in a Nutshell
 
@@ -30,7 +30,7 @@ public int getFooLength() {
 }
 ```
 
-This approach is lengthy, and that's not the only problem — it's also slow. Conventional wisdom says that exceptional logic shouldn't be used for normal program flow. `Result` makes us deal with expected, non-exceptional error situations explicitly as a way to enforce good programming practices and make our programs run faster.
+This approach is lengthy, and that's not the only problem — it's also [very slow](https://dev.leakyabstractions.com/result-benchmark/). Conventional wisdom says that exceptional logic shouldn't be used for normal program flow. `Result` makes us deal with expected, non-exceptional error situations explicitly as a way to enforce good programming practices and make our programs run faster.
 
 Let's now look at how the above code could be refactored if `foo` returned a result object instead of throwing an exception:
 

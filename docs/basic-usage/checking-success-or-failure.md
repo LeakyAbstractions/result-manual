@@ -9,7 +9,7 @@ As we saw previously, we can easily determine if a given `Result` instance is su
 
 ## Checking Success
 
-When we invoke [`Result::success`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasSuccess--) we will get a `boolean` representing whether a result contains a success value.
+When we invoke [`Result::hasSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasSuccess--) we will get a `boolean` representing whether a result contains a success value.
 
 ```java
 @Test

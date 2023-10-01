@@ -11,7 +11,7 @@ As useful as it may seem at first, we will soon realize that we won't need to do
 
 ## Unwrapping Success Value
 
-The most basic way to retrieve the success value wrapped inside a `Result` instance is [`Result::getSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#getSuccess--). This method will return an optional success value, depending on whether the result is successful or failed.
+The most basic way to retrieve the success value wrapped inside a `Result` instance is invoking [`Result::getSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#getSuccess--). This method will return an optional success value, depending on whether the result is successful or failed.
 
 ```java
 @Test
@@ -45,8 +45,8 @@ void get_failure() {
 }
 ```
 
-{% hint style="info" %}
-Note that, unlike [`Optional::get`](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html#get--), these methods are null-safe. However, in practice, we will not be using them a lot, especially since there are more convenient ways to get the success value out of a result.
+{% hint style="success" %}
+Unlike [`Optional::get`](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html#get--), these methods are null-safe. However, in practice, we will not be using them a lot, especially since there are more convenient ways to get the success value out of a result.
 {% endhint %}
 
 ## Using Alternative Success Value
