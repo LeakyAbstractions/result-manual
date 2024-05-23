@@ -5,25 +5,17 @@ description: A Java library to handle success and failure without exceptions
 
 # 🏠 Introduction
 
-<figure><img src="https://raw.githubusercontent.com/LeakyAbstractions/result/main/docs/result-magic-ball.png" alt="Result is a Java library to handle success and failure without exceptions."><figcaption><p><em><code>Result</code> objects have all the answers you need</em></p></figcaption></figure>
+<div data-full-width="true">
 
-<details>
+<figure><img src="https://raw.githubusercontent.com/LeakyAbstractions/result/main/docs/result.svg" alt="Result is a Java library to handle success and failure without exceptions." width="563"><figcaption></figcaption></figure>
 
-<summary>Result Library in a Nutshell</summary>
-
-The main difference is that an `Optional` instance can only express the _presence_ or _absence_ of a value, whereas a `Result` object may contain either a _success value_ or a _failure value_ that can be used to reason about what went wrong.
-
-<img src=".gitbook/assets/cover_small.jpg" alt="" data-size="original">
-
-As you can see, `Result` objects have methods equivalent to those of `Optional`, plus a few more for handling failure cases.
-
-</details>
-
-<table data-full-width="true"><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"><img src=".gitbook/assets/tachometer-alt.svg" alt="" data-size="original"></td><td align="center"><img src=".gitbook/assets/tint.svg" alt="" data-size="original"></td><td align="center"><img src=".gitbook/assets/bolt.svg" alt="" data-size="original"></td></tr><tr><td align="center"><strong>Fast</strong></td><td align="center"><strong>Simple</strong></td><td align="center"><strong>Error Handling</strong></td></tr><tr><td align="center">Faster than exceptions</td><td align="center">No frills, easy to use</td><td align="center">Functional style</td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"><img src=".gitbook/assets/feather-alt.svg" alt="" data-size="original"></td><td align="center"><img src=".gitbook/assets/balance-scale.svg" alt="" data-size="original"></td><td align="center"><img src=".gitbook/assets/mug-hot.svg" alt="" data-size="original"></td></tr><tr><td align="center"><h4>Lightweight</h4></td><td align="center"><h4>Open Source</h4></td><td align="center"><h4>Java Library</h4></td></tr><tr><td align="center">Zero dependencies</td><td align="center">Licensed under Apache 2</td><td align="center">JDK 8 and up</td></tr></tbody></table>
+</div>
 
 The purpose of this library is to type-safely encapsulate the output of operations that may _succeed_ or _fail_, instead of throwing exceptions.
 
 If you like `Optional` but feel that it sometimes falls too short, you will feel right at home.
+
+<table data-full-width="true"><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"><img src=".gitbook/assets/tachometer-alt.svg" alt=""><br> <mark style="background-color:red;"><strong>Fast</strong></mark> <br>Faster than throwing exceptions</td><td align="center"><img src=".gitbook/assets/tint.svg" alt=""><br> <mark style="background-color:red;"><strong>Simple</strong></mark> <br>No frills, easy to use</td><td align="center"><img src=".gitbook/assets/bolt.svg" alt=""><br> <mark style="background-color:red;"><strong>Error handling</strong></mark> <br>Functional programming style</td></tr><tr><td align="center"><img src=".gitbook/assets/feather-alt.svg" alt=""><br> <mark style="background-color:red;"><strong>Lightweight</strong></mark> <br>No additional dependencies</td><td align="center"><img src=".gitbook/assets/balance-scale.svg" alt=""><br> <mark style="background-color:red;"><strong>Open Source</strong></mark> <br>Licensed under Apache 2</td><td align="center"><img src=".gitbook/assets/mug-hot.svg" alt=""><br> <mark style="background-color:red;"><strong>Java Library</strong></mark> <br>JDK 8 and up</td></tr></tbody></table>
 
 ### Result Library in a Nutshell
 
