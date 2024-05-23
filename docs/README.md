@@ -19,10 +19,15 @@ As you can see, `Result` objects have methods equivalent to those of `Optional`,
 
 </details>
 
-|  <p><img src=".gitbook/assets/tachometer-alt.svg" alt="" data-size="original"><br><strong>Fast</strong><br>Faster than exceptions</p>  |          <p><img src=".gitbook/assets/tint.svg" alt="" data-size="original"><br><strong>Simple</strong><br>No frills, easy to use</p>          | <p><img src=".gitbook/assets/bolt.svg" alt="" data-size="original"><br><strong>Error Handling</strong><br>Functional style</p> |
-| :------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: |
-|                                                                                                                                        |                                                                                                                                                |                                                                                                                                |
-| <p><img src=".gitbook/assets/feather-alt.svg" alt="" data-size="original"><br><strong>Lightweight</strong></p><p>Zero dependencies</p> | <p><img src=".gitbook/assets/balance-scale.svg" alt="" data-size="original"><br><strong>Open Source</strong></p><p>Licensed under Apache 2</p> | <p><img src=".gitbook/assets/mug-hot.svg" alt="" data-size="original"><br><strong>Java Library</strong></p><p>JDK 8 and up</p> |
+|                                                                                   |                                                                  |                                                                  |
+| :-------------------------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
+|  <img src=".gitbook/assets/tachometer-alt.svg" alt="" data-size="original">       | <img src=".gitbook/assets/tint.svg" alt="" data-size="original"> | <img src=".gitbook/assets/bolt.svg" alt="" data-size="original"> |
+|  **Fast**                                                                         | **Simple**                                                       | **Error Handling**                                               |
+|  Faster than exceptions                                                           | No frills, easy to use                                           | Functional style                                                 |
+|                                                                                   |                                                                  |                                                                  |
+| ![](.gitbook/assets/feather-alt.svg)                                              | ![](.gitbook/assets/balance-scale.svg)                           | ![](.gitbook/assets/mug-hot.svg)                                 |
+| <h3>Lightweight</h3>                                                              | <h3>Open Source</h3>                                             | <h3>Java Library</h3>                                            |
+| Zero dependencies                                                                 | Licensed under Apache 2                                          | JDK 8 and up                                                     |
 
 The purpose of this library is to type-safely encapsulate the output of operations that may _succeed_ or _fail_, instead of throwing exceptions.
 
