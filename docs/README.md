@@ -25,12 +25,12 @@ As you can see, `Result` objects have methods equivalent to those of `Optional`,
 
 
 
-|   <img src=".gitbook/assets/image.png" alt="" data-size="original">   |                  ![](<.gitbook/assets/image (1).png>)                 |            ![](<.gitbook/assets/image (2).png>)            |
-| :-------------------------------------------------------------------: | :-------------------------------------------------------------------: | :--------------------------------------------------------: |
-|         <p><strong>Fast</strong><br>Faster than exceptions</p>        |        <p><strong>Simple</strong><br>No frills, easy to use</p>       | <p><strong>Error Handling</strong><br>Functional style</p> |
-|                                                                       |                                                                       |                                                            |
-| <img src=".gitbook/assets/image (3).png" alt="" data-size="original"> | <img src=".gitbook/assets/image (4).png" alt="" data-size="original"> |            ![](<.gitbook/assets/image (5).png>)            |
-|      <p><strong>Lightweight</strong></p><p>Zero dependencies</p>      |   <p><strong>Open Source</strong></p><p>Licensed under Apache 2</p>   |   <p><strong>Java Library</strong></p><p>JDK 8 and up</p>  |
+|   <img src=".gitbook/assets/tachometer-alt.svg" alt="" data-size="original">   |                  ![](<.gitbook/assets/tint.svg>)                          |            ![](<.gitbook/assets/bolt.svg>)                 |
+| :----------------------------------------------------------------------------: | :-----------------------------------------------------------------------: | :--------------------------------------------------------: |
+|         <p><strong>Fast</strong><br>Faster than exceptions</p>                 |        <p><strong>Simple</strong><br>No frills, easy to use</p>           | <p><strong>Error Handling</strong><br>Functional style</p> |
+|                                                                                |                                                                           |                                                            |
+| <img src=".gitbook/assets/feather-alt.svg" alt="" data-size="original">        | <img src=".gitbook/assets/balance-scale.svg" alt="" data-size="original"> |            ![](<.gitbook/assets/hot-mug.svg>)              |
+|      <p><strong>Lightweight</strong></p><p>Zero dependencies</p>               |   <p><strong>Open Source</strong></p><p>Licensed under Apache 2</p>       |   <p><strong>Java Library</strong></p><p>JDK 8 and up</p>  |
 
 The purpose of this library is to type-safely encapsulate the output of operations that may _succeed_ or _fail_, instead of throwing exceptions.
 
