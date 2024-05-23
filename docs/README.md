@@ -9,8 +9,6 @@ description: A Java library to handle success and failure without exceptions
 
 
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td></td><td><mark style="color:purple;">one</mark></td><td><a href=".gitbook/assets/cover.jpg">cover.jpg</a></td></tr><tr><td></td><td></td><td>two</td><td><a href=".gitbook/assets/basic-usage.png">basic-usage.png</a></td></tr><tr><td></td><td></td><td>three</td><td><a href=".gitbook/assets/getting-started.png">getting-started.png</a></td></tr></tbody></table>
-
 <details>
 
 <summary>Result Library in a Nutshell</summary>
@@ -18,6 +16,8 @@ description: A Java library to handle success and failure without exceptions
 The main difference is that an `Optional` instance can only express the _presence_ or _absence_ of a value, whereas a `Result` object may contain either a _success value_ or a _failure value_ that can be used to reason about what went wrong.
 
 ![](.gitbook/assets/cover\_small.jpg)
+
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td></td><td><mark style="color:purple;">one</mark></td><td><a href=".gitbook/assets/cover.jpg">cover.jpg</a></td></tr><tr><td></td><td></td><td>two</td><td><a href=".gitbook/assets/basic-usage.png">basic-usage.png</a></td></tr><tr><td></td><td></td><td>three</td><td><a href=".gitbook/assets/getting-started.png">getting-started.png</a></td></tr></tbody></table>
 
 As you can see, `Result` objects have methods equivalent to those of `Optional`, plus a few more for handling failure cases.
 
