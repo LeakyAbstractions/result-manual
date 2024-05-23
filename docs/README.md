@@ -29,7 +29,7 @@ As you can see, `Result` objects have methods equivalent to those of `Optional`,
 | :----------------------------------------------------------------------------: | :-----------------------------------------------------------------------: | :--------------------------------------------------------: |
 |         <p><strong>Fast</strong><br>Faster than exceptions</p>                 |        <p><strong>Simple</strong><br>No frills, easy to use</p>           | <p><strong>Error Handling</strong><br>Functional style</p> |
 |                                                                                |                                                                           |                                                            |
-| <img src=".gitbook/assets/feather-alt.svg" alt="" data-size="original">        | <img src=".gitbook/assets/balance-scale.svg" alt="" data-size="original"> |            ![](<.gitbook/assets/hot-mug.svg>)              |
+| <img src=".gitbook/assets/feather-alt.svg" alt="" data-size="original">        | <img src=".gitbook/assets/balance-scale.svg" alt="" data-size="original"> |            ![](<.gitbook/assets/mug-hot.svg>)              |
 |      <p><strong>Lightweight</strong></p><p>Zero dependencies</p>               |   <p><strong>Open Source</strong></p><p>Licensed under Apache 2</p>       |   <p><strong>Java Library</strong></p><p>JDK 8 and up</p>  |
 
 The purpose of this library is to type-safely encapsulate the output of operations that may _succeed_ or _fail_, instead of throwing exceptions.
