@@ -91,10 +91,16 @@ This allows others to easily compose operations on top of ours, just like we did
 [start](docs/start/)
 {% endcontent-ref %}
 
+<figure><img src=".gitbook/assets/getting-started.png" alt=""><figcaption></figcaption></figure>
+
 {% content-ref url="docs/basic/" %}
 [basic](docs/basic/)
 {% endcontent-ref %}
 
+<figure><img src=".gitbook/assets/basic-usage.png" alt=""><figcaption></figcaption></figure>
+
 {% content-ref url="docs/advanced/" %}
 [advanced](docs/advanced/)
 {% endcontent-ref %}
+
+<figure><img src=".gitbook/assets/advanced-usage.png" alt=""><figcaption></figcaption></figure>
