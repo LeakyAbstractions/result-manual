@@ -30,10 +30,6 @@ The purpose of this library is to type-safely encapsulate the output of operatio
 | :----------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: |
 |  <p><img src=".gitbook/assets/feather-alt.svg" alt="" data-size="original"><br><strong>Lightweight</strong><br>Zero dependencies</p> | <p><img src=".gitbook/assets/balance-scale.svg" alt="" data-size="original"><br><strong>Open Source</strong><br>Apache 2 Licensed</p> |   <p><img src=".gitbook/assets/mug-hot.svg" alt="" data-size="original"><br><strong>Java Library</strong><br>JDK 8 and up</p>  |
 
-{% hint style="success" %}
-If you like `Optional` but feel that it sometimes falls too short, you will feel right at home.
-{% endhint %}
-
 ### Result Library in a Nutshell
 
 Before `Result`, we would wrap the invocation of an exception-throwing method `foo` inside a `try` block so that errors can be handled inside a `catch` block.
@@ -84,6 +80,10 @@ public Result<Integer, SomeFailure> getFooLength() {
 ```
 
 This allows others to easily compose operations on top of ours, just like we did with `foo`.
+
+{% hint style="success" %}
+If you like `Optional` but feel that it sometimes falls too short, you will feel right at home.
+{% endhint %}
 
 ### Read the Docs
 

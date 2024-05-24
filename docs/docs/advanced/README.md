@@ -1,6 +1,8 @@
 ---
 title: Advanced Usage
 description: How to take Result objects to the next level
+cover: ../../.gitbook/assets/advanced-usage.png
+coverY: 0
 ---
 
 # 🚀 Advanced Usage
