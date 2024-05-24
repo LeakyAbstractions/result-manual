@@ -53,6 +53,7 @@ This approach is lengthy, and that's not the only problem — it's also [very sl
 
 Let's now look at how the above code could be refactored if `foo` returned a result object instead of throwing an exception:
 
+{% code fullWidth="true" %}
 ```java
 public int getFooLength() {
   Result<String, SomeFailure> result = foo();
@@ -61,6 +62,7 @@ public int getFooLength() {
   return resultLength.orElse(-1);
 }
 ```
+{% endcode %}
 
 In the above example, we use only four lines of code to replace the ten that worked in the first example. But we can make it even shorter by chaining methods in typical functional programming style:
 
@@ -97,7 +99,11 @@ If you like `Optional` but feel that it sometimes falls too short, you will feel
 [basic](docs/basic/)
 {% endcontent-ref %}
 
+<div data-full-width="true">
+
 <figure><img src=".gitbook/assets/basic-usage.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% content-ref url="docs/advanced/" %}
 [advanced](docs/advanced/)
