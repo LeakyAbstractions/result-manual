@@ -13,9 +13,9 @@ description: A Java library to handle success and failure without exceptions
 
 The purpose of this library is to type-safely encapsulate the output of operations that may _succeed_ or _fail_, instead of throwing exceptions
 
-| <p><img src=".gitbook/assets/tachometer-alt.svg" alt="" data-size="original"><br><strong>Fast</strong><br>Faster than throwing exceptions</p> |         <p><img src=".gitbook/assets/tint.svg" alt="" data-size="original"><br><strong>Simple</strong><br>No frills, easy to use</p>        | <p><img src=".gitbook/assets/bolt.svg" alt="" data-size="original"><br><strong>Error handling</strong><br>Functional programming style</p> |
-| :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: |
-|  <p><img src=".gitbook/assets/feather-alt.svg" alt="" data-size="original"><br><strong>Lightweight</strong><br>No additional dependencies</p> | <p><img src=".gitbook/assets/balance-scale.svg" alt="" data-size="original"><br><strong>Open Source</strong><br>Licensed under Apache 2</p> |         <p><img src=".gitbook/assets/mug-hot.svg" alt="" data-size="original"><br><strong>Java Library</strong><br>JDK 8 and up</p>        |
+| <p><img src=".gitbook/assets/tachometer-alt.svg" alt="" data-size="original"><br><strong>Fast</strong><br>Faster than exceptions</p> |      <p><img src=".gitbook/assets/tint.svg" alt="" data-size="original"><br><strong>Simple</strong><br>No frills, easy to use</p>     | <p><img src=".gitbook/assets/bolt.svg" alt="" data-size="original"><br><strong>Error handling</strong><br>Functional style</p> |
+| :----------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: |
+|  <p><img src=".gitbook/assets/feather-alt.svg" alt="" data-size="original"><br><strong>Lightweight</strong><br>Zero dependencies</p> | <p><img src=".gitbook/assets/balance-scale.svg" alt="" data-size="original"><br><strong>Open Source</strong><br>Apache 2 Licensed</p> |   <p><img src=".gitbook/assets/mug-hot.svg" alt="" data-size="original"><br><strong>Java Library</strong><br>JDK 8 and up</p>  |
 
 {% hint style="success" %}
 If you like `Optional` but feel that it sometimes falls too short, you will feel right at home.
@@ -40,7 +40,7 @@ public int getFooLength() {
 }
 ```
 
-This approach is lengthy, and that's not the only problem — it's also [very slow](https://dev.leakyabstractions.com/result-benchmark/). Conventional wisdom says that exceptional logic shouldn't be used for normal program flow. `Result` makes us deal with expected, non-exceptional error situations explicitly as a way to enforce good programming practices and make our programs run faster.
+This approach is lengthy, and that's not the only problem — it's also [very slow](https://dev.leakyabstractions.com/result-benchmark/). Conventional wisdom says exceptional logic shouldn't be used for normal program flow. `Result` makes us deal with expected, non-exceptional error situations explicitly to enforce good programming practices and make our programs run faster.
 
 Let's now look at how the above code could be refactored if `foo` returned a result object instead of throwing an exception:
 
