@@ -88,3 +88,15 @@ This allows others to easily compose operations on top of ours, just like we did
 {% content-ref url="docs/start/" %}
 [start](docs/start/)
 {% endcontent-ref %}
+
+{% content-ref url="docs/basic/" %}
+[basic](docs/basic/)
+{% endcontent-ref %}
+
+{% content-ref url="docs/advanced/" %}
+[advanced](docs/advanced/)
+{% endcontent-ref %}
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
