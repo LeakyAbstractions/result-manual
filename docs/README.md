@@ -82,3 +82,9 @@ public Result<Integer, SomeFailure> getFooLength() {
 ```
 
 This allows others to easily compose operations on top of ours, just like we did with `foo`.
+
+### Read the Docs
+
+{% content-ref url="docs/start/" %}
+[start](docs/start/)
+{% endcontent-ref %}
