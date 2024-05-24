@@ -7,7 +7,7 @@ layout:
   description:
     visible: false
   tableOfContents:
-    visible: true
+    visible: false
   outline:
     visible: false
   pagination:
@@ -15,6 +15,8 @@ layout:
 ---
 
 # 🏠 Home
+
+
 
 <div data-full-width="true">
 
@@ -95,8 +97,4 @@ This allows others to easily compose operations on top of ours, just like we did
 
 {% content-ref url="docs/advanced/" %}
 [advanced](docs/advanced/)
-{% endcontent-ref %}
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
 {% endcontent-ref %}

@@ -3,7 +3,7 @@ title: Getting Started
 description: How to get started with results
 ---
 
-# 🌱 How to Get Started
+# 🌱 Getting Started
 
 The best way to think of results is as a super-powered version of Java optionals.
 
@@ -33,3 +33,5 @@ The main difference is that an `Optional` instance can only express the _presenc
 |                   | `flatMap`         |
 
 As you can see, `Result` objects have methods equivalent to those of `Optional`, plus a few more for handling failure cases.
+
+<figure><img src="../../.gitbook/assets/getting-started.png" alt=""><figcaption></figcaption></figure>
