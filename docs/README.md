@@ -53,7 +53,7 @@ This approach is lengthy, and that's not the only problem — it's also [very sl
 
 Let's now look at how the above code could be refactored if `foo` returned a result object instead of throwing an exception:
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```java
 public int getFooLength() {
   Result<String, SomeFailure> result = foo();
@@ -93,20 +93,24 @@ If you like `Optional` but feel that it sometimes falls too short, you will feel
 [start](docs/start/)
 {% endcontent-ref %}
 
-<figure><img src=".gitbook/assets/getting-started.png" alt=""><figcaption></figcaption></figure>
-
 {% content-ref url="docs/basic/" %}
 [basic](docs/basic/)
 {% endcontent-ref %}
-
-<div data-full-width="true">
-
-<figure><img src=".gitbook/assets/basic-usage.png" alt=""><figcaption></figcaption></figure>
-
-</div>
 
 {% content-ref url="docs/advanced/" %}
 [advanced](docs/advanced/)
 {% endcontent-ref %}
 
+<div>
+
+<figure><img src=".gitbook/assets/getting-started.png" alt=""><figcaption></figcaption></figure>
+
+ 
+
+<figure><img src=".gitbook/assets/basic-usage.png" alt=""><figcaption></figcaption></figure>
+
+ 
+
 <figure><img src=".gitbook/assets/advanced-usage.png" alt=""><figcaption></figcaption></figure>
+
+</div>
