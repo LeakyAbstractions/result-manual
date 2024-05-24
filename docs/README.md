@@ -11,11 +11,13 @@ description: A Java library to handle success and failure without exceptions
 
 </div>
 
-The purpose of this library is to type-safely encapsulate the output of operations that may _succeed_ or _fail_, instead of throwing exceptions.
+The purpose of this library is to type-safely encapsulate the output of operations that may _succeed_ or _fail_, instead of throwing exceptions
 
+<table data-header-hidden><thead><tr><th width="252" align="center"></th><th width="247" align="center"></th><th width="207" align="center"></th></tr></thead><tbody><tr><td align="center"><img src=".gitbook/assets/tachometer-alt.svg" alt="" data-size="line"><br><strong>Fast</strong><br>Faster than throwing exceptions</td><td align="center"><img src=".gitbook/assets/tint.svg" alt="" data-size="line"><br><strong>Simple</strong><br>No frills, easy to use</td><td align="center"><img src=".gitbook/assets/bolt.svg" alt="" data-size="line"><br><strong>Error handling</strong><br>Functional programming style</td></tr><tr><td align="center"><img src=".gitbook/assets/feather-alt.svg" alt="" data-size="line"><br><strong>Lightweight</strong><br>No additional dependencies</td><td align="center"><img src=".gitbook/assets/balance-scale.svg" alt="" data-size="line"><br><strong>Open Source</strong><br>Licensed under Apache 2</td><td align="center"><p><img src=".gitbook/assets/mug-hot.svg" alt="" data-size="line"><br><strong>Java Library</strong></p><p>JDK 8 and up</p></td></tr></tbody></table>
+
+{% hint style="success" %}
 If you like `Optional` but feel that it sometimes falls too short, you will feel right at home.
-
-<table data-full-width="true"><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"><img src=".gitbook/assets/tachometer-alt.svg" alt=""><br> <mark style="background-color:red;"><strong>Fast</strong></mark> <br>Faster than throwing exceptions</td><td align="center"><img src=".gitbook/assets/tint.svg" alt=""><br> <mark style="background-color:red;"><strong>Simple</strong></mark> <br>No frills, easy to use</td><td align="center"><img src=".gitbook/assets/bolt.svg" alt=""><br> <mark style="background-color:red;"><strong>Error handling</strong></mark> <br>Functional programming style</td></tr><tr><td align="center"><img src=".gitbook/assets/feather-alt.svg" alt=""><br> <mark style="background-color:red;"><strong>Lightweight</strong></mark> <br>No additional dependencies</td><td align="center"><img src=".gitbook/assets/balance-scale.svg" alt=""><br> <mark style="background-color:red;"><strong>Open Source</strong></mark> <br>Licensed under Apache 2</td><td align="center"><img src=".gitbook/assets/mug-hot.svg" alt=""><br> <mark style="background-color:red;"><strong>Java Library</strong></mark> <br>JDK 8 and up</td></tr></tbody></table>
+{% endhint %}
 
 ### Result Library in a Nutshell
 
