@@ -11,7 +11,7 @@
   * [Checking Success or Failure](basic-usage/checking-success-or-failure.md)
   * [Unwrapping Values](basic-usage/unwrapping-values.md)
   * [🚧 Conditional Actions](basic-usage/conditional-actions.md)
-* [🚀 Advanced Usage](advanced-usage/README.md)
+* [🚀 Advanced Usage](using-the-library/advanced-usage/README.md)
   * [Screening Results](advanced-usage/screening-results.md)
   * [Transforming Values](advanced-usage/transforming-values.md)
 

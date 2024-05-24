@@ -1,7 +1,17 @@
 ---
 title: Page title
 description: A Java library to handle success and failure without exceptions
-layout: landing
+layout:
+  title:
+    visible: false
+  description:
+    visible: false
+  tableOfContents:
+    visible: false
+  outline:
+    visible: false
+  pagination:
+    visible: false
 ---
 
 # 🏠 Home
@@ -12,7 +22,7 @@ layout: landing
 
 </div>
 
-The purpose of this library is to type-safely encapsulate the output of operations that may _succeed_ or _fail_, instead of throwing exceptions
+The purpose of this library is to type-safely encapsulate the output of operations that may succeed or fail, instead of throwing exceptions.
 
 | <p><img src=".gitbook/assets/tachometer-alt.svg" alt="" data-size="original"><br><strong>Fast</strong><br>Faster than exceptions</p> |      <p><img src=".gitbook/assets/tint.svg" alt="" data-size="original"><br><strong>Simple</strong><br>No frills, easy to use</p>     | <p><img src=".gitbook/assets/bolt.svg" alt="" data-size="original"><br><strong>Error handling</strong><br>Functional style</p> |
 | :----------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: |
@@ -72,3 +82,10 @@ public Result<Integer, SomeFailure> getFooLength() {
 ```
 
 This allows others to easily compose operations on top of ours, just like we did with `foo`.
+
+### Read the docs
+
+* [Getting started](getting-started/)
+* [Basic Usage](getting-started/adding-result-to-your-build.md)
+* [Advanced usage](using-the-library/advanced-usage/)
+* [Bells and Whistles](broken-reference)
