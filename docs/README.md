@@ -16,8 +16,6 @@ layout:
 
 # 🏠 Home
 
-
-
 <div data-full-width="true">
 
 <figure><img src="https://raw.githubusercontent.com/LeakyAbstractions/result/main/docs/result.svg" alt="Result is a Java library to handle success and failure without exceptions." width="563"><figcaption></figcaption></figure>
@@ -26,9 +24,9 @@ layout:
 
 The purpose of this library is to type-safely encapsulate the output of operations that may succeed or fail, instead of throwing exceptions.
 
-| <p><img src=".gitbook/assets/tachometer-alt.svg" alt="" data-size="original"><br><strong>Fast</strong><br>Faster than exceptions</p> |      <p><img src=".gitbook/assets/tint.svg" alt="" data-size="original"><br><strong>Simple</strong><br>No frills, easy to use</p>     | <p><img src=".gitbook/assets/bolt.svg" alt="" data-size="original"><br><strong>Error handling</strong><br>Functional style</p> |
-| :----------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: |
-|  <p><img src=".gitbook/assets/feather-alt.svg" alt="" data-size="original"><br><strong>Lightweight</strong><br>Zero dependencies</p> | <p><img src=".gitbook/assets/balance-scale.svg" alt="" data-size="original"><br><strong>Open Source</strong><br>Apache 2 Licensed</p> |   <p><img src=".gitbook/assets/mug-hot.svg" alt="" data-size="original"><br><strong>Java Library</strong><br>JDK 8 and up</p>  |
+| ![](.gitbook/assets/tachometer-alt.svg) <br> **Fast** <br> Faster than exceptions | ![](.gitbook/assets/tint.svg) <br> **Simple** <br> No frills, easy to use          | ![](.gitbook/assets/bolt.svg) <br> **Error handling** <br> Functional style |
+| :-------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: | :-------------------------------------------------------------------------: |
+| ![](.gitbook/assets/feather-alt.svg) <br> **Lightweight** <br> Zero dependencies  | ![](.gitbook/assets/balance-scale.svg) <br> **Open Source** <br> Apache 2 Licensed | ![](.gitbook/assets/mug-hot.svg) <br> **Java Library** <br> JDK 8 and up    |
 
 ### Results in a Nutshell
 
@@ -36,48 +34,58 @@ Before `Result`, we would wrap the invocation of an exception-throwing method `c
 
 <div data-full-width="true">
 
-<figure><img src=".gitbook/assets/using-exceptions.png" alt=""><figcaption></figcaption></figure>
+![Using Exceptions](.gitbook/assets/using-exceptions.png)
 
 </div>
 
 This approach is lengthy, and that's not the only problem — it's also [very slow](https://dev.leakyabstractions.com/result-benchmark/).
 
 {% hint style="info" %}
+
 Conventional wisdom says exceptional logic shouldn't be used for normal program flow. Results make us deal with expected error situations explicitly to enforce good practices and make our programs run faster.
+
 {% endhint %}
 
 Let's now look at how the above code could be refactored if `connect()` returned a `Result` object instead of throwing an exception.
 
 <div data-full-width="true">
 
-<figure><img src=".gitbook/assets/using-results.png" alt=""><figcaption></figcaption></figure>
+![Using Results](.gitbook/assets/using-results.png)
 
 </div>
 
-In the above example, we used only four lines of code to replace the ten that worked for the first one. But we can make it even shorter by chaining methods in functional style. In fact, since we are using `-1` here just to signal that the underlying operation failed, we'd be better off returning a result instance upstream. This will allow others to easily compose operations on top of `getServerUptime()`, just like we did with `connect()`.
+In the above example, we used only four lines of code to replace the ten that worked for the first one. But we can make it even shorter by chaining methods in functional style. In fact, since we are using `-1` here just to signal that the underlying operation failed, we'd be better off returning a result instance upstream. This will allow others to easily compose operations on top of `getServerUptime()` just like we did with `connect()`.
 
 <div data-full-width="true">
 
-<figure><img src=".gitbook/assets/embracing-results.png" alt=""><figcaption></figcaption></figure>
+![Embracing Results](.gitbook/assets/embracing-results.png)
 
 </div>
 
 While examples used `String` as the failure type, results can use whatever generic type makes the most sense for each situation to represent errors.
 
 {% hint style="success" %}
+
 If you like `Optional` but feel that it sometimes falls too short, you will feel right at home.
+
 {% endhint %}
 
 ### Read the Docs
 
 {% content-ref url="docs/start/" %}
+
 [start](docs/start/)
+
 {% endcontent-ref %}
 
 {% content-ref url="docs/basic/" %}
+
 [basic](docs/basic/)
+
 {% endcontent-ref %}
 
 {% content-ref url="docs/advanced/" %}
+
 [advanced](docs/advanced/)
+
 {% endcontent-ref %}
