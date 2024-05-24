@@ -7,7 +7,7 @@ layout:
   description:
     visible: false
   tableOfContents:
-    visible: false
+    visible: true
   outline:
     visible: false
   pagination:
@@ -82,10 +82,3 @@ public Result<Integer, SomeFailure> getFooLength() {
 ```
 
 This allows others to easily compose operations on top of ours, just like we did with `foo`.
-
-### Read the docs
-
-* [Getting started](getting-started/)
-* [Basic Usage](getting-started/adding-result-to-your-build.md)
-* [Advanced usage](using-the-library/advanced-usage/)
-* [Bells and Whistles](broken-reference)
