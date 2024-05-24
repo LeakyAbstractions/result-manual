@@ -1,9 +1,10 @@
 ---
 title: Page title
 description: A Java library to handle success and failure without exceptions
+layout: landing
 ---
 
-# 🏠 Introduction
+# 🏠 Home
 
 <div data-full-width="true">
 
