@@ -34,52 +34,21 @@ The purpose of this library is to type-safely encapsulate the output of operatio
 
 Before `Result`, we would wrap the invocation of an exception-throwing method `foo` inside a `try` block so that errors can be handled inside a `catch` block.
 
-```java
-public int getFooLength() {
-  int length;
-  try {
-    String result = foo();
-    this.ok(result);
-    length = result.length();
-  } catch(SomeException problem) {
-    this.error(problem);
-    length = -1;
-  }
-  return length;
-}
-```
+<figure><img src=".gitbook/assets/using-exceptions.png" alt=""><figcaption></figcaption></figure>
 
 This approach is lengthy, and that's not the only problem — it's also [very slow](https://dev.leakyabstractions.com/result-benchmark/). Conventional wisdom says exceptional logic shouldn't be used for normal program flow. `Result` makes us deal with expected, non-exceptional error situations explicitly to enforce good programming practices and make our programs run faster.
 
 Let's now look at how the above code could be refactored if `foo` returned a result object instead of throwing an exception:
 
-{% code fullWidth="false" %}
-```java
-public int getFooLength() {
-  Result<String, SomeFailure> result = foo();
-  result.ifSuccessOrElse(this::ok, this::error);
-  Result<Integer, SomeFailure> resultLength = result.mapSuccess(String::length);
-  return resultLength.orElse(-1);
-}
-```
-{% endcode %}
+<div data-full-width="true">
 
-In the above example, we use only four lines of code to replace the ten that worked in the first example. But we can make it even shorter by chaining methods in typical functional programming style:
+<figure><img src=".gitbook/assets/using-results.png" alt=""><figcaption></figcaption></figure>
 
-```java
-public int getFooLength() {
-  return foo().ifSuccessOrElse(this::ok, this::error).mapSuccess(String::length)
-    .orElse(-1);
-}
-```
+</div>
 
-In fact, since we are using `-1` here just to signal that the underlying operation failed, we'd be better off returning a `Result` object upstream:
+In the above example, we use only four lines of code to replace the ten that worked in the first example. But we can make it even shorter by chaining methods in functional style. In fact, since we are using `-1` here just to signal that the underlying operation failed, we'd be better off returning a `Result` object upstream:
 
-```java
-public Result<Integer, SomeFailure> getFooLength() {
-  return foo().ifSuccessOrElse(this::ok, this::error).mapSuccess(String::length);
-}
-```
+<figure><img src=".gitbook/assets/embracing-results.png" alt=""><figcaption></figcaption></figure>
 
 This allows others to easily compose operations on top of ours, just like we did with `foo`.
 
@@ -100,17 +69,3 @@ If you like `Optional` but feel that it sometimes falls too short, you will feel
 {% content-ref url="docs/advanced/" %}
 [advanced](docs/advanced/)
 {% endcontent-ref %}
-
-<div>
-
-<figure><img src=".gitbook/assets/getting-started.png" alt=""><figcaption></figcaption></figure>
-
- 
-
-<figure><img src=".gitbook/assets/basic-usage.png" alt=""><figcaption></figcaption></figure>
-
- 
-
-<figure><img src=".gitbook/assets/advanced-usage.png" alt=""><figcaption></figcaption></figure>
-
-</div>
