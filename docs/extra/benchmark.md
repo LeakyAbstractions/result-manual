@@ -5,14 +5,14 @@ description: Measuring performance to find out how fast results are
 
 # Library Performance
 
-We established that throwing Java exceptions is slow. But... how slow? According to our benchmarks, returning a failed result is several orders of magnitude faster than throwing an exception.
+We mentioned that throwing Java exceptions is slow. But... how slow? According to our benchmarks, throwing an exception is several orders of magnitude slower than returning a failed result.
 
 <figure><img src="https://img.shields.io/endpoint?url=https://dev.leakyabstractions.com/result-benchmark/badge.json" alt="" width="563"><figcaption><p>Returning a failed result is way faster than throwing an exception</p></figcaption></figure>
 
-This proves our initial point that it's a really bad idea to use exceptional logic just to control normal program flow.
+This proves that using exceptional logic just to control normal program flow is a bad idea.
 
 {% hint style="info" %}
-You should throw exceptions sparingly in your code, even more so when developing performance-sensitive applications.
+We should throw exceptions sparingly, even more so when developing performance-sensitive applications.
 {% endhint %}
 
 ## Result Library Benchmarks
@@ -75,5 +75,5 @@ public Result<String, ComplexFailure> usingResults(int number) {
 While these benchmarks corroborate that most codebases could benefit in terms of performance from using this library instead of using exceptions, the main goal is to help promote best practices and implement proper error handling.
 
 {% hint style="info" %}
-If you worry about performance, you should benchmark your own applications to gain reusable insights. These should guide your decisions regarding the adoption of frameworks and libraries.
+If you worry about performance, you should benchmark your applications to gain reusable insights. These should guide your decisions regarding the adoption of frameworks and libraries.
 {% endhint %}
