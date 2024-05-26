@@ -34,23 +34,25 @@ In Java, methods that can _fail_ typically do so by _throwing exceptions_. Then,
 
 <div data-full-width="true">
 
-<img src=".gitbook/assets/using-exceptions.png" alt="Using Exceptions">
+![Using Exceptions](.gitbook/assets/using-exceptions.png)
 
 </div>
 
 This approach is lengthy, and that's not the only problem — it's also [very slow](https://dev.leakyabstractions.com/result-benchmark/).
 
 {% hint style="info" %}
+
 Conventional wisdom says **exceptional logic shouldn't be used for normal program flow**. Results make us deal with _expected error situations_ explicitly to enforce _good practices_ and make our programs run _faster_.
 
-[![](https://img.shields.io/endpoint?url=https://dev.leakyabstractions.com/result-benchmark/badge.json\&style=flat)](https://github.com/LeakyAbstractions/result-benchmark)
+[![](https://img.shields.io/endpoint?url=https://dev.leakyabstractions.com/result-benchmark/badge.json&style=flat)](https://github.com/LeakyAbstractions/result-benchmark)
+
 {% endhint %}
 
 Let's now look at how the above code could be refactored if `connect()` returned a `Result` object instead of throwing an exception.
 
 <div data-full-width="true">
 
-<img src=".gitbook/assets/using-results.png" alt="Using Results">
+![Using Results](.gitbook/assets/using-results.png)
 
 </div>
 
@@ -58,14 +60,16 @@ In the above example, we used only four lines of code to replace the ten that wo
 
 <div data-full-width="true">
 
-<img src=".gitbook/assets/embracing-results.png" alt="Embracing Results">
+![Embracing Results](.gitbook/assets/embracing-results.png)
 
 </div>
 
 Although this example uses `String` as the failure type, results can use whatever generic type makes the most sense in each situation to represent errors.
 
 {% hint style="success" %}
+
 If you like `Optional` but feel that it sometimes falls too short, you will feel right at home.
+
 {% endhint %}
 
 ### Read the Docs
