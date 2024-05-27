@@ -5,7 +5,7 @@ description: How to find out if the operation succeded or failed
 
 # Checking Success or Failure
 
-As we saw previously, we can easily determine if a given `Result` instance is successful or failed.
+As we saw previously, we can easily determine if a given `Result` instance is successful or not.
 
 ## Checking Success
 
@@ -13,13 +13,13 @@ When we invoke [`Result::hasSuccess`](https://dev.leakyabstractions.com/result/j
 
 ```java
 @Test
-void check_success() {
+void testHasSuccess() {
   // Given
-  final Result<?, ?> result1 = success(1024);
-  final Result<?, ?> result2 = failure(1024);
+  Result<?, ?> result1 = success(1024);
+  Result<?, ?> result2 = failure(1024);
   // When
-  final boolean result1HasSuccess = result1.hasSuccess();
-  final boolean result2HasSuccess = result2.hasSuccess();
+  boolean result1HasSuccess = result1.hasSuccess();
+  boolean result2HasSuccess = result2.hasSuccess();
   // Then
   assertTrue(result1HasSuccess);
   assertFalse(result2HasSuccess);
@@ -32,13 +32,13 @@ We can also use [`Result::hasFailure`](https://dev.leakyabstractions.com/result/
 
 ```java
 @Test
-void check_failure() {
+void testHasFailure() {
   // Given
-  final Result<?, ?> result1 = success(512);
-  final Result<?, ?> result2 = failure(512);
+  Result<?, ?> result1 = success(512);
+  Result<?, ?> result2 = failure(512);
   // When
-  final boolean result1HasFailure = result1.hasFailure();
-  final boolean result2HasFailure = result2.hasFailure();
+  boolean result1HasFailure = result1.hasFailure();
+  boolean result2HasFailure = result2.hasFailure();
   // Then
   assertFalse(result1HasFailure);
   assertTrue(result2HasFailure);

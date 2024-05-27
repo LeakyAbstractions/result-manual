@@ -5,7 +5,7 @@ description: How to add Result as a dependency to your build
 
 # Adding Result to Your Build
 
-The latest releases are available in [Maven Central](https://central.sonatype.com/artifact/com.leakyabstractions/result/1.0.0.0).
+The latest releases are available in [Maven Central](https://central.sonatype.com/artifact/com.leakyabstractions/result).
 
 ## Artifact coordinates
 
@@ -34,18 +34,12 @@ We can also add `Result` as a [**Gradle**](https://gradle.org/) dependency.
 
 ```
 dependencies {
-    implementation 'com.leakyabstractions:result:1.0.0.0'
-}
-```
-
-This is the most common configuration when we are building an application that uses `Result` internally. If we were building a library that exposed `Result` in its public API, we should use instead:
-
-```
-dependencies {
-    api 'com.leakyabstractions:result:1.0.0.0'
+    implementation("com.leakyabstractions:result:1.0.0.0")
 }
 ```
 
 {% hint style="info" %}
-For more information on when to use `api` and `implementation`, read the [Gradle documentation on API and implementation separation](https://docs.gradle.org/current/userguide/java\_library\_plugin.html#sec:java\_library\_separation).
+This is the most common configuration for projects using `Result` internally. If we were building a library that exposed `Result` in its public API, we should use `api` instead of `implementation`.
+
+For further information about Gradle configurations, read the [documentation on API and implementation separation](https://docs.gradle.org/current/userguide/java\_library\_plugin.html#sec:java\_library\_separation).
 {% endhint %}

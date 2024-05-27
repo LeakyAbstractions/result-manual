@@ -9,41 +9,37 @@ There are several ways to create `Result` objects.
 
 ## Successful Results
 
-To create a successful result, we use [`Results::success`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#success-S-).
+A successful result holds whatever non-null value an operation is supposed to produce if everything works as expected. To create an instance, we use [`Results::success`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#success-S-).
 
 ```java
 @Test
-void create_successful_result() {
+void testSuccess() {
   // When
-  final Result<Integer, ?> result = Results.success(200);
+  Result<Integer, ?> result = Results.success(200);
   // Then
   assertTrue(result::hasSuccess);
   assertFalse(result::hasFailure);
 }
 ```
 
-{% hint style="success" %}
-Note that we can invoke [`Result::hasSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasSuccess--) or [`Result::hasFailure`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasFailure--) to check if a result is successful or failed.
+{% hint style="info" %}
+Note that we can invoke [`Result::hasSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasSuccess--) or [`Result::hasFailure`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasFailure--) to check whether a result is successful or failed (more on this in the next section).
 {% endhint %}
-
-A successful result holds whatever non-null value the method is supposed to produce if everything works as expected.
 
 ## Failed Results
 
-On the other hand, if we want to create a failed result, we use [`Results::failure`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#failure-F-).
+On the other hand, a failed result holds a value representing the problem that prevented the operation from succeeding. To create a new one, we use [`Results::failure`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#failure-F-).
 
 ```java
 @Test
-void create_failed_result() {
+void testFailure() {
   // When
-  final Result<?, String> result = Results.failure("The operation failed");
+  Result<?, String> result = Results.failure("The operation failed");
   // Then
   assertTrue(result::hasFailure);
   assertFalse(result::hasSuccess);
 }
 ```
-
-A failure can be represented by any Java type. You can use a `String` just like in the example above, or you can define your custom objects; whatever makes most sense in that context.
 
 {% hint style="danger" %}
 Just like success values, failure values can't be `null` either.
@@ -55,13 +51,13 @@ Just like success values, failure values can't be `null` either.
 
 ```java
 @Test
-void create_result_based_on_nullable() {
+void testOfNullable() {
   // Given
-  final String string1 = "The operation succeeded";
-  final String string2 = null;
+  String string1 = "The operation succeeded";
+  String string2 = null;
   // When
-  final Result<String, Integer> result1 = Results.ofNullable(string1, 404);
-  final Result<String, Integer> result2 = Results.ofNullable(string2, 404);
+  Result<String, Integer> result1 = Results.ofNullable(string1, 404);
+  Result<String, Integer> result2 = Results.ofNullable(string2, 404);
   // Then
   assertTrue(result1::hasSuccess);
   assertTrue(result2::hasFailure);
@@ -69,7 +65,7 @@ void create_result_based_on_nullable() {
 ```
 
 {% hint style="info" %}
-An alternative version of this method accepts a supplying function that produces a failure value.
+The second argument can be either a failure value or a supplying function that produces a failure value.
 {% endhint %}
 
 ## Results Based on Optionals
@@ -78,13 +74,13 @@ We can also use [`Results::ofOptional`](https://dev.leakyabstractions.com/result
 
 ```java
 @Test
-void create_result_based_on_optional() {
+void testOfOptional() {
   // Given
-  final Optional<BigDecimal> optional1 = Optional.of(BigDecimal.ONE);
-  final Optional<BigDecimal> optional2 = Optional.empty();
+  Optional<BigDecimal> optional1 = Optional.of(BigDecimal.ONE);
+  Optional<BigDecimal> optional2 = Optional.empty();
   // When
-  final Result<BigDecimal, Integer> result1 = Results.ofOptional(optional1, -1);
-  final Result<BigDecimal, Integer> result2 = Results.ofOptional(optional2, -1);
+  Result<BigDecimal, Integer> result1 = Results.ofOptional(optional1, -1);
+  Result<BigDecimal, Integer> result2 = Results.ofOptional(optional2, -1);
   // Then
   assertTrue(result1::hasSuccess);
   assertTrue(result2::hasFailure);
@@ -92,7 +88,7 @@ void create_result_based_on_optional() {
 ```
 
 {% hint style="info" %}
-There's an alternative version of this method that accepts a supplying function too.
+The second argument can be a `Supplier` too.
 {% endhint %}
 
 ## Results Based on Callables
@@ -109,16 +105,16 @@ String task2() throws Exception {
 }
 
 @Test
-void create_result_based_on_callable() {
+void testOfCallable() {
   // When
-  final Result<String, Exception> result1 = Results.ofCallable(this::task1);
-  final Result<String, Exception> result2 = Results.ofCallable(this::task2);
+  Result<String, Exception> result1 = Results.ofCallable(this::task1);
+  Result<String, Exception> result2 = Results.ofCallable(this::task2);
   // Then
   assertTrue(result1::hasSuccess);
   assertTrue(result2::hasFailure);
 }
 ```
 
-{% hint style="success" %}
-This method is useful when we need to invoke third-party code that throws exceptions.
+{% hint style="info" %}
+This method allows for interoperation with legacy or third-party code that indicates operation failure by throwing exceptions.
 {% endhint %}

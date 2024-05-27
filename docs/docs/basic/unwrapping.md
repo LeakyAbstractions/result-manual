@@ -1,29 +1,32 @@
 ---
 title: Unwrapping Values
-description: How to get wrapped values out of Result objects
+description: How to get values out of Result objects
 ---
 
 # Unwrapping Values
 
-In a nutshell, a `Result` object is just a container that wraps either a success or a failure value for us. Sometimes we may need to simply get that value out of the container.
+In a nutshell, a `Result` object is just a container that wraps either a success or a failure value for us. Sometimes we simply need to get that value out of the container.
 
-As useful as it may seem at first, we will soon realize that we won't need to do it that often.
+{% hint style="info" %}
+As useful as this may seem, we will soon realize that we won't be doing it that often.
+{% endhint %}
 
 ## Unwrapping Success Value
 
-The most basic way to retrieve the success value wrapped inside a `Result` instance is invoking [`Result::getSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#getSuccess--). This method will return an optional success value, depending on whether the result is successful or failed.
+The most basic way to retrieve the success value wrapped inside a `Result` instance is by invoking [`Result::getSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#getSuccess--). This method will return an optional success value, depending on whether the result was actually successful or not.
 
 ```java
 @Test
-void get_success() {
+void testGetSuccess() {
   // Given
-  final Result<?, ?> result = success("SUCCESS");
+  Result<?, ?> result1 = success("SUCCESS");
+  Result<?, ?> result2 = failure("FAILURE");
   // Then
-  final Optional<?> success = result.getSuccess();
-  final Optional<?> failure = result.getFailure();
+  Optional<?> success1 = result1.getSuccess();
+  Optional<?> success2 = result2.getSuccess();
   // Then
-  assertEquals("SUCCESS", success.orElse(null));
-  assertTrue(failure::isEmpty);
+  assertEquals("SUCCESS", success1.get());
+  assertTrue(success2::isEmpty);
 }
 ```
 
@@ -33,36 +36,37 @@ Similarly, we can use [`Result::getFailure`](https://dev.leakyabstractions.com/r
 
 ```java
 @Test
-void get_failure() {
+void testGetFailure() {
   // Given
-  final Result<?, ?> result = failure("FAILURE");
+  Result<?, ?> result1 = success("SUCCESS");
+  Result<?, ?> result2 = failure("FAILURE");
   // Then
-  final Optional<?> success = result.getSuccess();
-  final Optional<?> failure = result.getFailure();
+  Optional<?> failure1 = result1.getFailure();
+  Optional<?> failure2 = result2.getFailure();
   // Then
-  assertTrue(success::isEmpty);
-  assertEquals("FAILURE", failure.orElse(null));
+  assertTrue(failure1::isEmpty);
+  assertEquals("FAILURE", failure2.get());
 }
 ```
 
 {% hint style="success" %}
-Unlike [`Optional::get`](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html#get--), these methods are null-safe. However, in practice, we will not be using them a lot, especially since there are more convenient ways to get the success value out of a result.
+Unlike [`Optional::get`](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html#get--), these methods are null-safe. However, in practice, we will not be using them frequently. Especially, since there are more convenient ways to get the success value out of a result.
 {% endhint %}
 
 ## Using Alternative Success Value
 
-For example, we can use [`Result::orElse`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElse-S-) and provide an alternative success value that will be returned in case the result is failed.
+We can for example use [`Result::orElse`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElse-S-) to provide an alternative success value that must be returned when the result is unsuccessful.
 
 ```java
 @Test
-void get_success_or_an_alternative_value() {
+void testGetOrElse() {
   // Given
-  final Result<String, ?> result1 = success("IDEAL");
-  final Result<String, ?> result2 = failure(1024);
-  final String alternative = "OTHER";
+  Result<String, String> result1 = success("IDEAL");
+  Result<String, String> result2 = failure("ERROR");
+  String alternative = "OTHER";
   // When
-  final String value1 = result1.orElse(alternative);
-  final String value2 = result2.orElse(alternative);
+  String value1 = result1.orElse(alternative);
+  String value2 = result2.orElse(alternative);
   // Then
   assertEquals("IDEAL", value1);
   assertEquals("OTHER", value2);
@@ -70,25 +74,25 @@ void get_success_or_an_alternative_value() {
 ```
 
 {% hint style="info" %}
-Note that the alternative success value can be `null`.
+Note that alternative success values can be `null`.
 {% endhint %}
 
 ## Mapping Failure Value
 
-The [`Result::orElseMap`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElseMap-java.util.function.Function-) method is similar to `orElse()`. However, instead of using an alternative success value, it takes a mapping function. This function will be applied to the failure value to produce an alternative success value:
+The [`Result::orElseMap`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElseMap-java.util.function.Function-) method is similar to `orElse()` but it takes a mapping function instead of an alternative success value. The function will receive the failure value to produce the alternative success value:
 
 ```java
 @Test
-void get_success_or_map_failure_value() {
+void testGetOrElseMap() {
   // Given
-  final Result<String, Integer> result1 = success("OK");
-  final Result<String, Integer> result2 = failure(1024);
-  final Result<String, Integer> result3 = failure(-256);
-  final Function<Integer, String> mapper = x -> x > 0 ? "HI" : "LO";
+  Result<String, Integer> result1 = success("OK");
+  Result<String, Integer> result2 = failure(1024);
+  Result<String, Integer> result3 = failure(-256);
+  Function<Integer, String> mapper = x -> x > 0 ? "HI" : "LO";
   // When
-  final String value1 = result1.orElseMap(mapper);
-  final String value2 = result2.orElseMap(mapper);
-  final String value3 = result3.orElseMap(mapper);
+  String value1 = result1.orElseMap(mapper);
+  String value2 = result2.orElseMap(mapper);
+  String value3 = result3.orElseMap(mapper);
   // Then
   assertEquals("OK", value1);
   assertEquals("HI", value2);
@@ -97,7 +101,7 @@ void get_success_or_map_failure_value() {
 ```
 
 {% hint style="info" %}
-Note that, although the mapping function may return `null`, it is not the best practice.
+Note that the mapping function may return `null` (it wouldn't be the best practice though).
 {% endhint %}
 
 ## Streaming Success/Failure Values
@@ -106,26 +110,26 @@ Finally, we can use [`Result::streamSuccess`](https://dev.leakyabstractions.com/
 
 ```java
 @Test
-void stream_success() {
+void testStreamSuccess() {
   // Given
-  final Result<?, ?> result1 = success("Yes");
-  final Result<?, ?> result2 = failure("No");
+  Result<?, ?> result1 = success("Yes");
+  Result<?, ?> result2 = failure("No");
   // When
-  final Stream<?> stream1 = result1.streamSuccess();
-  final Stream<?> stream2 = result2.streamSuccess();
+  Stream<?> stream1 = result1.streamSuccess();
+  Stream<?> stream2 = result2.streamSuccess();
   // Then
   assertEquals("Yes", stream1.findFirst().orElse(null));
   assertNull(stream2.findFirst().orElse(null));
 }
 
 @Test
-void stream_failure() {
+void testStreamFailure() {
   // Given
-  final Result<?, ?> result1 = success("Yes");
-  final Result<?, ?> result2 = failure("No");
+  Result<?, ?> result1 = success("Yes");
+  Result<?, ?> result2 = failure("No");
   // When
-  final Stream<?> stream1 = result1.streamFailure();
-  final Stream<?> stream2 = result2.streamFailure();
+  Stream<?> stream1 = result1.streamFailure();
+  Stream<?> stream2 = result2.streamFailure();
   // Then
   assertNull(stream1.findFirst().orElse(null));
   assertEquals("No", stream2.findFirst().orElse(null));
