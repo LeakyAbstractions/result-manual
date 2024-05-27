@@ -14,19 +14,19 @@ layout:
     visible: false
 ---
 
-# Home
+# 🏠 Home
 
 <div data-full-width="true">
 
-![Result is a Java library to handle success and failure without exceptions](https://raw.githubusercontent.com/LeakyAbstractions/result/main/docs/result.svg)
+<img src="https://raw.githubusercontent.com/LeakyAbstractions/result/main/docs/result.svg" alt="" width="563">
 
 </div>
 
 The purpose of this library is to type-safely encapsulate the output of operations that may succeed or fail, instead of throwing exceptions.
 
-| ![](.gitbook/assets/tachometer-alt.svg) <br> **Fast**        <br> High performance | ![](.gitbook/assets/tint.svg)          <br> **Simple**      <br> Very easy to use  | ![](.gitbook/assets/bolt.svg)    <br> **Error handling** <br> Functional style |
-| :--------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: | :----------------------------------------------------------------------------: |
-| ![](.gitbook/assets/feather-alt.svg)    <br> **Lightweight** <br> No dependencies  | ![](.gitbook/assets/balance-scale.svg) <br> **Open Source** <br> Apache 2 licensed | ![](.gitbook/assets/mug-hot.svg) <br> **Java Library**   <br> JDK 8 and up     |
+|   <p><img src=".gitbook/assets/tachometer-alt.svg" alt=""><br><strong>Fast</strong><br>High performance</p>  |         <p><img src=".gitbook/assets/tint.svg" alt=""><br><strong>Simple</strong><br>Very easy to use</p>        | <p><img src=".gitbook/assets/bolt.svg" alt=""><br><strong>Error handling</strong><br>Functional style</p> |
+| :----------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: |
+| <p><img src=".gitbook/assets/feather-alt.svg" alt=""><br><strong>Lightweight</strong><br>No dependencies</p> | <p><img src=".gitbook/assets/balance-scale.svg" alt=""><br><strong>Open Source</strong><br>Apache 2 licensed</p> |   <p><img src=".gitbook/assets/mug-hot.svg" alt=""><br><strong>Java Library</strong><br>JDK 8 and up</p>  |
 
 ## Results in a Nutshell
 
@@ -34,7 +34,7 @@ In Java, methods that can _fail_ typically do so by _throwing exceptions_. Then,
 
 <div data-full-width="true">
 
-![Using Exceptions](.gitbook/assets/using-exceptions.png)
+<img src=".gitbook/assets/using-exceptions.png" alt="Using Exceptions">
 
 </div>
 
@@ -48,7 +48,7 @@ Let's now look at how the above code could be refactored if `connect()` returned
 
 <div data-full-width="true">
 
-![Using Results](.gitbook/assets/using-results.png)
+<img src=".gitbook/assets/using-results.png" alt="Using Results">
 
 </div>
 
@@ -56,7 +56,7 @@ In the above example, we used only four lines of code to replace the ten that wo
 
 <div data-full-width="true">
 
-![Embracing Results](.gitbook/assets/embracing-results.png)
+<img src=".gitbook/assets/embracing-results.png" alt="Embracing Results">
 
 </div>
 
