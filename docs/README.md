@@ -18,7 +18,7 @@ layout:
 
 <div data-full-width="true">
 
-<img src="https://raw.githubusercontent.com/LeakyAbstractions/result/main/docs/result.svg" alt="" width="563">
+<picture><source srcset=".gitbook/assets/result-logo.dark.svg" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/result-logo.svg" alt="" width="192"></picture>
 
 </div>
 
