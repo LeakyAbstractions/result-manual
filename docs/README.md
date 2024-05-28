@@ -18,7 +18,7 @@ layout:
 
 <div data-full-width="true">
 
-<picture><source srcset=".gitbook/assets/result-logo.dark.svg" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/result-logo.svg" alt="" width="192"></picture>
+<picture><source srcset=".gitbook/assets/result-logo.dark.svg" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/result-logo.svg" alt="" width="640"></picture>
 
 </div>
 
