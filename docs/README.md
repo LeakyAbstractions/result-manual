@@ -16,11 +16,7 @@ layout:
 
 # 🏠 Home
 
-<div data-full-width="true">
-
-<picture><source srcset=".gitbook/assets/result-logo.dark.svg" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/result-logo.svg" alt="" width="640"></picture>
-
-</div>
+![](.gitbook/assets/result-logo.svg)
 
 The purpose of this library is to type-safely encapsulate the output of operations that may succeed or fail, instead of throwing exceptions.
 
