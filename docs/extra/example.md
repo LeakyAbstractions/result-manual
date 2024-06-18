@@ -11,3 +11,10 @@ It is based on [swagger-petstore](https://github.com/swagger-api/swagger-petstor
 
 You can access the source code [here](https://github.com/leakyabstractions/result-example).
 
+## Spring Boot
+
+Lorem ipsum.
+
+## Micronaut
+
+Lorem ipsum.
