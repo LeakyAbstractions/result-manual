@@ -22,7 +22,9 @@ layout:
 
 </div>
 
-The purpose of this library is to type-safely encapsulate the output of operations that may succeed or fail, instead of throwing exceptions.
+Type-safely encapsulate the output of operations that can succeed or fail instead of throwing exceptions.
+
+### Table
 
 | <p><picture><source srcset=".gitbook/assets/tachometer-alt.dark.svg" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/tachometer-alt.svg" alt=""></picture><br><strong>Fast</strong><br>High performance</p> |             <p><picture><source srcset=".gitbook/assets/tint.dark.svg" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/tint.svg" alt=""></picture><br><strong>Simple</strong><br>Very easy to use</p>             | <p><picture><source srcset=".gitbook/assets/bolt.dark.svg" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/bolt.svg" alt=""></picture><br><strong>Error handling</strong><br>Functional style</p> |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
