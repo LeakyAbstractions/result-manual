@@ -23,5 +23,3 @@
 * [Fluent Assertions](extra/assertj.md)
 * [Bill of Materials](extra/bom.md)
 * [Example Project](extra/example.md)
-* [🏠 Home - Cards](extra/readme-cards.md)
-* [🏠 Home - Table](extra/readme-table.md)
