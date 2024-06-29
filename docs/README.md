@@ -28,8 +28,6 @@ Wave goodbye to slow exceptions and embrace clean, efficient error handling by e
 
 ### Results in a Nutshell
 
-Keep your project lightweight with a clean, minimal design and no extra dependencies.
-
 In Java, methods that can fail typically do so by throwing exceptions. Then, exception-throwing methods are called from inside a `try` block to handle errors in a separate `catch` block.
 
 <div data-full-width="true">
