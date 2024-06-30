@@ -16,11 +16,13 @@ layout:
 
 # 🏠 Home
 
-
-
 <picture><source srcset=".gitbook/assets/result-logo.dark.svg" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/result-logo.svg" alt=""></picture>
 
-## <mark style="background-color:green;">A Java library to handle success and failure</mark><br><mark style="background-color:red;">without exceptions</mark>
+<mark style="background-color:green;">A Java library to handle success and failure</mark>\
+<mark style="background-color:red;">without exceptions</mark>
+-------------------------------------------------------------
+
+## A Java library to handle success & failure without exceptions
 
 Wave goodbye to slow exceptions and embrace clean, efficient error handling by encapsulating operations that may succeed or fail in a type-safe way.
 
@@ -62,7 +64,7 @@ Although these examples use `String` as the failure type, results can safely enc
 
 ### Read the Guide
 
-Give it a try and transform your error handling today with Result.&#x20;
+Give it a try and transform your error handling today with Result.
 
 {% content-ref url="docs/start/" %}
 [start](docs/start/)
