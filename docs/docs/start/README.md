@@ -5,48 +5,48 @@ description: Get up and running with results in no time
 
 # 🌱 Getting Started
 
-The best way to think of results is as a super-powered version of Java optionals.
+{% hint style="success" %}
+&#x20;The best way to think of results is as a super-powered version of Java's optionals.
+{% endhint %}
 
-The main difference is that an `Optional` instance can only express the _presence_ or _absence_ of a value, whereas a `Result` object may contain either a _success value_ or a _failure value_ that can be used to reason about what went wrong.
+`Result` builds upon the familiar concept of `Optional`, enhancing it with the ability to represent both success and failure states. By leveraging results, you can unleash a powerful tool for error handling that goes beyond the capabilities of traditional optionals, leading to more robust and maintainable Java code.
 
 {% tabs %}
-{% tab title="Optional vs Result" %}
-{% hint style="success" %}
-If you like `Optional` but feel that it sometimes falls too short, you will feel right at home.
-{% endhint %}
+{% tab title="Why Results Over Optionals?" %}
+`Optional` class is useful for representing values that might be present or absent, eliminating the need for null checks. However, optionals fall short when it comes to error handling because they do not convey why a value is lacking. `Result` addresses this limitation by encapsulating both successful values and failure reasons, offering a more expressive way to reason about what went wrong.
 {% endtab %}
 
 {% tab title="Methods" %}
-As you can see, `Result` objects have methods equivalent to those of `Optional`, plus a few more to handle failure outcomes effectively.
+Results provide the same methods as optionals, plus additional ones to handle failure states effectively.
 
-| Optional          | Result            |
-| ----------------- | ----------------- |
-| `isPresent`       | `isSuccess`       |
-| `isEmpty`         | `isFailure`       |
-| `get`             | `getSuccess`      |
-|                   | `getFailure`      |
-| `orElse`          | `orElse`          |
-| `orElseGet`       | `orElseMap`       |
-| `orElseThrow`     |                   |
-| `stream`          | `streamSuccess`   |
-|                   | `streamFailure`   |
-| `ifPresent`       | `ifSuccess`       |
-|                   | `ifFailure`       |
-| `ifPresentOrElse` | `ifSuccessOrElse` |
-| `filter`          | `filter`          |
-|                   | `recover`         |
-| `map`             | `mapSuccess`      |
-|                   | `mapFailure`      |
-|                   | `map`             |
-| `flatMap`         | `flatMapSuccess`  |
-| `or`              | `flatMapFailure`  |
-|                   | `flatMap`         |
+| Optional            | Result              |
+| ------------------- | ------------------- |
+| `isPresent()`       | `isSuccess()`       |
+| `isEmpty()`         | `isFailure()`       |
+| `get()`             | `getSuccess()`      |
+|                     | `getFailure()`      |
+| `orElse()`          | `orElse()`          |
+| `orElseGet()`       | `orElseMap()`       |
+| `orElseThrow()`     |                     |
+| `stream()`          | `streamSuccess()`   |
+|                     | `streamFailure()`   |
+| `ifPresent()`       | `ifSuccess()`       |
+|                     | `ifFailure()`       |
+| `ifPresentOrElse()` | `ifSuccessOrElse()` |
+| `filter()`          | `filter()`          |
+|                     | `recover()`         |
+| `map()`             | `mapSuccess()`      |
+|                     | `mapFailure()`      |
+|                     | `map()`             |
+| `flatMap()`         | `flatMapSuccess()`  |
+| `or()`              | `flatMapFailure()`  |
+|                     | `flatMap()`         |
 {% endtab %}
 {% endtabs %}
 
 <div align="center" data-full-width="true">
 
-<figure><img src="../../.gitbook/assets/getting-started.png" alt=""><figcaption><p>No need to return <code>null</code> or throw an exception: just return a <em>failed</em> result.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/getting-started.png" alt=""><figcaption><p>No need to return <code>null</code> or throw an exception: just return a failed result.</p></figcaption></figure>
 
 </div>
 
