@@ -19,8 +19,9 @@
 
 * [Library Performance](extra/benchmark.md)
 * [Lazy Results](extra/lazy.md)
-* [Jackson Module](extra/jackson.md)
 * [Micronaut Serialization](extra/micronaut-serialization.md)
 * [Fluent Assertions](extra/assertj.md)
 * [Bill of Materials](extra/bom.md)
+* [Jackson Module](extra/jackson.md)
 * [Example Project](extra/example.md)
+* [License](extra/license.md)
