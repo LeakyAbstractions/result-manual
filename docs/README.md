@@ -56,7 +56,7 @@ In the example above, we used only 4 lines of code to replace the 10 that worked
 
 </div>
 
-Although these examples use `String` as the failure type, results can safely encapsulate whatever type makes the most sense in each situation to represent both success errors.
+Although these examples use `String` as the failure type, results can safely encapsulate whatever type makes the most sense in each situation to represent errors.
 
 ### Read the Guide
 
