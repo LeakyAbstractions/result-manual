@@ -20,7 +20,7 @@ layout:
 
 <picture><source srcset=".gitbook/assets/result-logo.dark.svg" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/result-logo.svg" alt=""></picture>
 
-## A Java library to handle success and failure without exceptions
+## <mark style="background-color:green;">A Java library to handle success and failure</mark> <mark style="background-color:red;">without exceptions</mark>
 
 Wave goodbye to slow exceptions and embrace clean, efficient error handling by encapsulating operations that may succeed or fail in a type-safe way.
 
