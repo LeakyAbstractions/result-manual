@@ -5,7 +5,13 @@ description: How to take Result objects to the next level
 
 # 🚀 Advanced Usage
 
-While retrieving success/failure values out of `Result` objects can be convenient sometimes, what's in fact more idiomatic is to manipulate the value inside a result without actually unwrapping it. Most of the time, we will apply transformations to result instances, obtaining possibly different result objects in return. This allows us to compose behavior in a [monadic way](https://en.wikipedia.org/wiki/Monad\_\(functional\_programming\)).
+While understanding the basics (like checking status, unwrapping values, and executing conditional actions) provides a solid foundation, the true potential of result objects is unlocked through their functional capabilities. Mastering these techniques enables concise and readable error handling by leveraging the power of [monadic composition](https://en.wikipedia.org/wiki/Monad\_\(functional\_programming\)).
+
+{% hint style="success" %}
+The most idiomatic approach to handling results involves screening them (with methods like `filter` or `recover`) and applying various mapping and flat-mapping methods to transform and compose behavior.
+{% endhint %}
+
+This section will guide you through these powerful tools, demonstrating how to manipulate results effectively so you can craft more robust and maintainable Java applications.
 
 <div data-full-width="true">
 
