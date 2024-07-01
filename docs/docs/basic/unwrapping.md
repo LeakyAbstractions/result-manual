@@ -5,15 +5,15 @@ description: How to get values out of Result objects
 
 # Unwrapping Values
 
-In a nutshell, a `Result` object is just a container that wraps either a success or a failure value for us. Sometimes we simply need to get that value out of the container.
+In essence, a `Result` object is just a container that wraps a success or a failure value for us. Therefore, sometimes you are going to want to get that value out of the container.
 
 {% hint style="info" %}
-As useful as this may seem, we will soon realize that we won't be doing it that often.
+As useful as this may seem, we will soon realize that we won't be doing it very often.
 {% endhint %}
 
-## Unwrapping Success Value
+## Unwrapping Success
 
-The most basic way to retrieve the success value wrapped inside a `Result` instance is by invoking [`Result::getSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#getSuccess--). This method will return an optional success value, depending on whether the result was actually successful or not.
+The most basic way to retrieve the success value wrapped inside a result is by using [`Result::getSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#getSuccess--). This method will return an optional success value, depending on whether the result was actually successful or not.
 
 ```java
 @Test
@@ -30,7 +30,7 @@ void testGetSuccess() {
 }
 ```
 
-## Unwrapping Failure Value
+## Unwrapping Failure
 
 Similarly, we can use [`Result::getFailure`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#getFailure--) to obtain the failure value held by a `Result` object.
 
@@ -50,12 +50,12 @@ void testGetFailure() {
 ```
 
 {% hint style="success" %}
-Unlike [`Optional::get`](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html#get--), these methods are null-safe. However, in practice, we will not be using them frequently. Especially, since there are more convenient ways to get the success value out of a result.
+Unlike [`Optional::get`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html#get\(\)), these methods are null-safe. However, in practice, we will not be using them frequently. Especially, since there are more convenient ways to get the success value out of a result.
 {% endhint %}
 
-## Using Alternative Success Value
+## Using Alternative Success
 
-We can for example use [`Result::orElse`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElse-S-) to provide an alternative success value that must be returned when the result is unsuccessful.
+We can use [`Result::orElse`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElse-S-) to provide an alternative success value that must be returned when the result is unsuccessful.
 
 ```java
 @Test
@@ -77,9 +77,9 @@ void testGetOrElse() {
 Note that alternative success values can be `null`.
 {% endhint %}
 
-## Mapping Failure Value
+## Mapping Failure
 
-The [`Result::orElseMap`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElseMap-java.util.function.Function-) method is similar to `orElse()` but it takes a mapping function instead of an alternative success value. The function will receive the failure value to produce the alternative success value:
+The [`Result::orElseMap`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#orElseMap-java.util.function.Function-) method is similar to [`Optional::orElse`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html#orElse\(T\)), but it takes a mapping [`Function`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html) instead of an alternative success value. The function will receive the failure value to produce the alternative success value.
 
 ```java
 @Test
@@ -101,10 +101,10 @@ void testGetOrElseMap() {
 ```
 
 {% hint style="info" %}
-Note that the mapping function may return `null` (it wouldn't be the best practice though).
+Although probably not the best practice, the mapping function may return `null`.
 {% endhint %}
 
-## Streaming Success/Failure Values
+## Streaming Success or Failure
 
 Finally, we can use [`Result::streamSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#streamSuccess--) and [`Result::streamFailure`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#streamFailure--) to wrap the value held by an instance of `Result` into a possibly-empty `Stream` object.
 
