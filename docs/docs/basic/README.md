@@ -5,9 +5,7 @@ description: How to solve simple use-case scenarios
 
 # 🪴 Basic Usage
 
-Very often, all we want to do with a successful result is to execute a specific action with its value. On the other hand, if it’s a failed result we may have some recovery strategy or alternative actions to take.
-
-Other simple scenarios include checking whether the operation succeeded or unwrapping the success/failure values.
+In this section, we'll cover foundational use cases, including checking the status of a result, unwrapping the value inside a result, and taking different actions based on success or failure. These basics will help you handle errors more cleanly and efficiently without cluttering your code with _try-catch_ blocks.
 
 <div data-full-width="true">
 
