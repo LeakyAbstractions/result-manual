@@ -5,11 +5,11 @@ description: How to instantiate new Result objects
 
 # Creating Results
 
-There are several ways to create `Result` objects.
+There are several ways to create result objects.
 
 ## Successful Results
 
-A successful result holds whatever non-null value an operation is supposed to produce if everything works as expected. To create an instance, we use [`Results::success`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#success-S-).
+A successful result contains a non-null value produced by an operation when everything works as expected. We can use [`Results::success`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#success-S-) to create a new instance.
 
 ```java
 @Test
@@ -28,7 +28,7 @@ Note that we can invoke [`Result::hasSuccess`](https://dev.leakyabstractions.com
 
 ## Failed Results
 
-On the other hand, a failed result holds a value representing the problem that prevented the operation from succeeding. To create a new one, we use [`Results::failure`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#failure-F-).
+On the other hand, a failed result holds a value representing the problem that prevented the operation from succeeding. We can use [`Results::failure`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#failure-F-) to create a new one.
 
 ```java
 @Test
@@ -42,12 +42,12 @@ void testFailure() {
 ```
 
 {% hint style="danger" %}
-Just like success values, failure values can't be `null` either.
+Failure values cannot be `null` either.
 {% endhint %}
 
 ## Results Based on Nullable Values
 
-[`Results::ofNullable`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofNullable-S-F-) can be used to create results that depend on a possibly-null value. If the first argument is `null`, then the second one will be used to create a failed result.
+When we need to create results that depend on a possibly null value, we can use [`Results::ofNullable`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofNullable-S-F-). If the first argument is `null`, then the second one will be used to create a failed result.
 
 ```java
 @Test
@@ -65,12 +65,12 @@ void testOfNullable() {
 ```
 
 {% hint style="info" %}
-The second argument can be either a failure value or a supplying function that produces a failure value.
+The second argument can be either a failure value or a function that produces a failure value.
 {% endhint %}
 
 ## Results Based on Optionals
 
-We can also use [`Results::ofOptional`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofOptional-java.util.Optional-F-) to create results that depend on an optional value. If the first argument is empty, then the second one will be used to create a failed result.
+We can also use [`Results::ofOptional`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofOptional-java.util.Optional-F-) to create results that depend on an [`Optional`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html) value. If the first argument is an empty optional, then the second one will be used to create a failed result.
 
 ```java
 @Test
@@ -88,12 +88,12 @@ void testOfOptional() {
 ```
 
 {% hint style="info" %}
-The second argument can be a `Supplier` too.
+The second argument can be a [`Supplier`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Supplier.html) too.
 {% endhint %}
 
 ## Results Based on Callables
 
-Finally, if we have a task that may either return a success value or throw an exception, we can encapsulate it as a result using [`Results::ofCallable`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofCallable-java.util.concurrent.Callable-), so we don't need to use a _try-catch_ block.
+Finally, if we have a task that may either return a success value or throw an exception, we can encapsulate it as a result using [`Results::ofCallable`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Results.html#ofCallable-java.util.concurrent.Callable-)  so we don't need to use a _try-catch_ block.
 
 ```java
 String task1() {
@@ -116,5 +116,5 @@ void testOfCallable() {
 ```
 
 {% hint style="info" %}
-This method allows for interoperation with legacy or third-party code that indicates operation failure by throwing exceptions.
+This method enables compatibility with legacy or third-party code that uses exceptions to indicate operation failure.
 {% endhint %}
