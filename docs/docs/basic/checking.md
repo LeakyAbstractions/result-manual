@@ -5,11 +5,11 @@ description: How to find out if the operation succeded or failed
 
 # Checking Success or Failure
 
-As we saw previously, we can easily determine if a given `Result` instance is successful or not.
+As we discovered earlier, we can easily determine if a given `Result` instance is successful or not.
 
 ## Checking Success
 
-When we invoke [`Result::hasSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasSuccess--) we will get a `boolean` representing whether a result contains a success value.
+We can use [`Result::hasSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#hasSuccess--) to obtain a `boolean` value that represents whether a result is successful.
 
 ```java
 @Test
