@@ -1,46 +1,73 @@
 ---
 title: Conditional Actions
-description: Handling success and failure
+description: Handling success and failure scenarios
 ---
 
 # Conditional Actions
 
-The `if...` family of methods enables us to run some code on the wrapped success/failure value.
+We'll now delve into a set of methods that allow you to take conditional actions based on the state of a result. They provide a cleaner and more expressive way to handle success and failure scenarios, eliminating the need for lengthy _if/else_ blocks.
 
-## Handling Exceptions
+### Handling Success
 
-Before `Result`, we would wrap exception-throwing `foobar` method invocation inside a `try` block so that errors can be handled inside a `catch` block:
+The `ifSuccess` method allows you to specify an action that must be executed if the result represents a successful outcome. This method takes a [consumer function](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html) that will be applied to the success value wrapped by the result.
 
 ```java
-try {
-    final String result = foobar();
-    this.commit(result);
-} catch(SomeException problem) {
-    this.rollback(problem);
+@Test
+void testIfSuccess() {
+  // Given
+  List<Object> list = new ArrayList<>();
+  Result<Integer, String> result = success(100);
+  // When
+  result.ifSuccess(list::add);
+  // Then
+  assertEquals(100L, list.getFirst());
 }
 ```
 
-## Handling Results
+In this example, `ifSuccess` ensures that the provided action (adding the success value to the list) is only executed if the parsing operation is successful.
 
-Let's now look at how the above code could be refactored if method `foobar` returned a `Result` object instead of throwing an exception:
+### Handling Failure
 
-```java
-final Result<String, SomeFailure> result = foobar();
-result.ifSuccessOrElse(this::commit, this::rollback);
-```
-
-The first action passed to [`Result::ifSuccessOrElse`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#ifSuccessOrElse-java.util.function.Consumer,java.util.function.Consumer-) will be performed if `foobar` succeeded; otherwise, the second one will.
-
-The above example is not only shorter but also faster. We can make it even shorter by chaining methods together in typical functional programming style:
+The `ifFailure` method enables you to define an action that must be taken when the result represents a failure. This method also takes a [`Consumer` ](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html)that will be applied to the failure value inside the result.
 
 ```java
-foobar().ifSuccessOrElse(this::commit, this::rollback);
+@Test
+void testIfFailure() {
+  // Given
+  List<Object> list = new ArrayList<>();
+  Result<Integer, String> result = failure("ERROR");
+  // When
+  result.ifFailure(list::add);
+  // Then
+  assertEquals("ERROR", list.getFirst());
+}
 ```
 
-There are other methods [`Result::ifSuccess`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#ifSuccess-java.util.function.Consumer-) and [`Result::ifFailure`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#ifFailure-java.util.function.Consumer-) to handle either one of the success/ failure cases:
+Here, `ifFailure` ensures that the provided action (adding the failure value to the list) is only executed if the parsing operation fails.
+
+### Handling Both Scenarios
+
+The `ifSuccessOrElse` method allows you to specify two separate actions: one for when the operation succeeded and another for when it failed. This method takes two [`Consumer` ](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html)functions: the first for handling the success case and the second for handling the failure case.
 
 ```java
-foobar()
-    .ifSuccess(this::commit)    // commits only if foobar succeeded
-    .ifFailure(this::rollback); // rolls back only if foobar failed
+@Test
+void testIfSuccessOrElse() {
+  // Given
+  List<Object> list1 = new ArrayList<>();
+  List<Object> list2 = new ArrayList<>();
+  Result<Long, String> result1 = success(100L);
+  Result<Long, String> result2 = failure("ERROR");
+  // When
+  result1.ifSuccessOrElse(list1::add, list1::add);
+  result2.ifSuccessOrElse(list2::add, list2::add);
+  // Then
+  assertEquals(100L, list1.getFirst());
+  assertEquals("ERROR", list2.getFirst());
+}
 ```
+
+In this example, `ifSuccessOrElse` simplifies conditional logic by providing a single method to handle both success and failure scenarios, making the code more concise and readable.
+
+{% hint style="info" %}
+To recap, these methods—`ifSuccess`, `ifFailure`, and `ifSuccessOrElse`—provide a powerful way to handle conditional actions based on the state of a result, streamlining your error handling and making your code more readable and maintainable.
+{% endhint %}
