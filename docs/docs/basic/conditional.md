@@ -9,7 +9,7 @@ We'll now delve into a set of methods that allow you to take conditional actions
 
 ### Handling Success
 
-The `ifSuccess` method allows you to specify an action that must be executed if the result represents a successful outcome. This method takes a [consumer function](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html) that will be applied to the success value wrapped by the result.
+We can use [`Result::ifSuccess`](https://dev.leakyabstractions.com/result-api/javadoc/1.0.0.0/com/leakyabstractions/result/api/Result.html#ifSuccess-java.util.function.Consumer-) to specify an action that must be executed if the result represents a successful outcome. This method takes a [consumer function](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html) that will be applied to the success value wrapped by the result.
 
 ```java
 @Test
@@ -28,7 +28,7 @@ In this example, `ifSuccess` ensures that the provided action (adding the succes
 
 ### Handling Failure
 
-The `ifFailure` method enables you to define an action that must be taken when the result represents a failure. This method also takes a [`Consumer` ](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html)that will be applied to the failure value inside the result.
+On the other hand, we can use [`Result::ifFailure`](https://dev.leakyabstractions.com/result-api/javadoc/1.0.0.0/com/leakyabstractions/result/api/Result.html#ifFailure-java.util.function.Consumer-) method to define an action that must be taken when the result represents a failure. This method also takes a [`Consumer` ](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html)that will be applied to the failure value inside the result.
 
 ```java
 @Test
@@ -47,7 +47,7 @@ Here, `ifFailure` ensures that the provided action (adding the failure value to 
 
 ### Handling Both Scenarios
 
-The `ifSuccessOrElse` method allows you to specify two separate actions: one for when the operation succeeded and another for when it failed. This method takes two [`Consumer` ](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html)functions: the first for handling the success case and the second for handling the failure case.
+Finally, [`Result::ifSuccessOrElse`](https://dev.leakyabstractions.com/result-api/javadoc/1.0.0.0/com/leakyabstractions/result/api/Result.html#ifSuccessOrElse-java.util.function.Consumer-java.util.function.Consumer-)  allows you to specify two separate actions: one for when the operation succeeded and another for when it failed. This method takes two [consumer functions](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html): the first for handling the success case and the second for handling the failure case.
 
 ```java
 @Test
@@ -69,5 +69,5 @@ void testIfSuccessOrElse() {
 In this example, `ifSuccessOrElse` simplifies conditional logic by providing a single method to handle both success and failure scenarios, making the code more concise and readable.
 
 {% hint style="info" %}
-To recap, these methods—`ifSuccess`, `ifFailure`, and `ifSuccessOrElse`—provide a powerful way to handle conditional actions based on the state of a result, streamlining your error handling and making your code more readable and maintainable.
+To recap, these three methods provide a powerful way to handle conditional actions based on the state of a result, streamlining your error handling and making your code more readable and maintainable.
 {% endhint %}
