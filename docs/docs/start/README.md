@@ -44,6 +44,8 @@ Results provide the same methods as optionals, plus additional ones to handle fa
 {% endtab %}
 {% endtabs %}
 
+Result objects are immutable, providing thread safety without the need for synchronization. This makes them ideal for multi-threaded applications. Immutability enhances functional programming by ensuring predictability and eliminating side effects.
+
 <div align="center" data-full-width="true">
 
 <figure><img src="../../.gitbook/assets/getting-started.png" alt=""><figcaption><p>No need to return <code>null</code> or throw an exception: just return a failed result.</p></figcaption></figure>
