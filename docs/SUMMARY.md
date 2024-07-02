@@ -5,7 +5,7 @@
 ## Using the Library <a href="#docs" id="docs"></a>
 
 * [🌱 Getting Started](docs/start/README.md)
-  * [Adding Result to Your Build](docs/start/add-dependency.md)
+  * [Adding Result to Your Build](docs/start/adding-dependency.md)
   * [Creating Results](docs/start/creating-results.md)
 * [🪴 Basic Usage](docs/basic/README.md)
   * [Checking Success or Failure](docs/basic/checking.md)
