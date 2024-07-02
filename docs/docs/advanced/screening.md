@@ -5,87 +5,62 @@ description: Conditionally rejecting success values and accepting failure values
 
 # Screening Results
 
-Often, something that a lower logic layer considers a _success_ can be considered a _failure_ by an upper layer. Or _vice versa_.
+{% hint style="info" %}
+Screening mechanisms provide greater flexibility in handling edge cases and enable more robust error recovery strategies.
+{% endhint %}
 
-Results provide convenient methods for rejecting success values as well as accepting failure values, based on a predefined rule that is represented by a [`Predicate`](https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/function/Predicate.html).
+The following methods allow you to run inline tests on the wrapped value of a result to dynamically transform a success into a failure or a failure into a success.
 
-## Rejecting Success
+## Validating Success
 
-We can run an inline test on our wrapped success value with [`Result::filter`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#filter-java.util.function.Predicate-java.util.function.Function-). This method takes a predicate and a mapping function as arguments and returns a possibly-new result object:
+The [`Result::filter`](https://dev.leakyabstractions.com/result-api/javadoc/1.0.0.0/com/leakyabstractions/result/api/Result.html#filter-java.util.function.Predicate-java.util.function.Function-) method allows you to transform a success into a failure based on certain conditions. It takes two parameters:
 
-* If the result has a success value that doesn't satisfy the predicate, `filter` will return a new result object containing the failure value produced by the mapping function.
-* Otherwise, the result will be returned as-is.
+1. A [`Predicate`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html) to determine if the success value is acceptable.
+2. A mapping [`Function`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html) that will produce a failure value if the value is deemed unacceptable.
 
-```java
-@Test
-void should_pass_test() {
-  // Given
-  final Result<Integer, String> result = success(-1);
-  final Predicate<Integer> isPositive = i -> i >= 0;
-  // When
-  final Result<Integer, String> filtered = result
-      .filter(isPositive, i -> "Negative number");
-  // Then
-  assertThat(filtered.hasFailure()).isTrue();
-}
-```
-
-{% hint style="danger" %}
-Note that it is illegal for the `mapper` to return `null`.
+{% hint style="success" %}
+This can be used to enforce additional validation constraints on success values.
 {% endhint %}
 
 ```java
 @Test
-void filter_successful_result_to_null() {
+void testFilter() {
   // Given
-  final Result<Pet, PetError> result = createPet("Rantanplan", AVAILABLE);
+  Result<Integer, String> result = success(1);
   // When
-  final Throwable thrown = catchThrowable(() -> result.filter(s -> false, s -> null));
+  Result<Integer, String> filtered = result.filter(x -> x % 2 == 0, x -> "It's odd");
   // Then
-  assertThat(thrown)
-      jav.isInstanceOf(NullPointerException.class)
-      .hasMessage("failure value returned by mapper");
+  assertTrue(filtered.hasFailure());
 }
 ```
+
+In this example, we use a lambda expression to validate that the success value inside `result` is even. Since the number is odd, it transforms the result into a failure.
+
+{% hint style="danger" %}
+Note that it is illegal for the mapping function to return `null`.
+{% endhint %}
 
 ## Recovering From Failure
 
-We can run an inline test on our wrapped failure value with [`Result::recover`](https://dev.leakyabstractions.com/result/javadoc/1.0.0.0/com/leakyabstractions/result/Result.html#recover-java.util.function.Predicate-java.util.function.Function-). This method takes a predicate and a mapping function as arguments and returns a possibly-new `Result` object:
+The [`Result::recover`](https://dev.leakyabstractions.com/result-api/javadoc/1.0.0.0/com/leakyabstractions/result/api/Result.html#recover-java.util.function.Predicate-java.util.function.Function-) method allows you to transform a failure into a success based on certain conditions. It also receives two parameters:
 
-* If the result has a failure value that satisfies the predicate, `recover` will return a new result object containing the success value produced by the mapping function.
-* Otherwise, the result will be returned as-is.
+1. A [`Predicate`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html) to determine if the failure value is recoverable.
+2. A mapping [`Function`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html) that will produce a success value from the acceptable failure value.
+
+{% hint style="success" %}
+This method is useful for implementing fallback mechanisms or recovery strategies, ensuring the application logic remains resilient and adaptable.
+{% endhint %}
 
 ```java
 @Test
-void recover_failed_result() {
+void testRecover() {
   // Given
-  final Result<Pet, PetError> result1 = failure(new PetError("Not found"));
-  final Result<Pet, PetError> result2 = createPet("Foo", SOLD);
-  final Predicate<PetError> predicate = x -> x.message.equals("Not found");
-  final Function<PetError, Pet> mapper = x -> new Pet("Fallback pet", AVAILABLE);
+  Result<Integer, String> result = failure("OK");
   // When
-  final Result<Pet, PetError> mapped1 = result1.recover(predicate, mapper);
-  final Result<Pet, PetError> mapped2 = result2.recover(predicate, mapper);
+  Result<Integer, String> filtered = result.recover("OK"::equals, String::length);
   // Then
-  assertEquals("Fallback pet", mapped1.orElse(null).name);
-  assertEquals("Foo", mapped2.orElse(null).name);
+  assertTrue(filtered.hasSuccess());
 }
 ```
 
-{% hint style="danger" %}
-It's also illegal for this `mapper` to return `null`.
-{% endhint %}
-
-<pre class="language-java"><code class="lang-java"><strong>@Test
-</strong>void recover_failed_result_to_null() {
-  // Given
-  final Result&#x3C;Pet, PetError> result = failure(new PetError("Not found"));
-  // When
-  final Throwable thrown = catchThrowable(() -> result
-      .recover(s -> true, s -> null));
-  // Then
-  assertThat(thrown)
-      .isInstanceOf(NullPointerException.class)
-      .hasMessage("success value returned by mapper");
-}
-</code></pre>
+In this example, we use method references to check if the failure value equals `OK` and then transform the result into a success.
